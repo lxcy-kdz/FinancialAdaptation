@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yonyougov.mapper.CcidsMapper">
+
+    <resultMap type="com.yonyougov.entity.Ccids" id="resultMap">
+        <result property="id" column="ID" jdbcType="OTHER"/>
+        <result property="createBy" column="CREATE_BY" jdbcType="OTHER"/>
+        <result property="createDate" column="CREATE_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedBy" column="LAST_MODIFIED_BY" jdbcType="OTHER"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedVersion" column="LAST_MODIFIED_VERSION" jdbcType="OTHER"/>
+        <result property="admDivCode" column="ADM_DIV_CODE" jdbcType="OTHER"/>
+        <result property="aeCode" column="AE_CODE" jdbcType="OTHER"/>
+        <result property="aeId" column="AE_ID" jdbcType="OTHER"/>
+        <result property="aeName" column="AE_NAME" jdbcType="OTHER"/>
+        <result property="agencyCode" column="AGENCY_CODE" jdbcType="OTHER"/>
+        <result property="agencyId" column="AGENCY_ID" jdbcType="OTHER"/>
+        <result property="agencyName" column="AGENCY_NAME" jdbcType="OTHER"/>
+        <result property="agencyexpCode" column="AGENCYEXP_CODE" jdbcType="OTHER"/>
+        <result property="agencyexpId" column="AGENCYEXP_ID" jdbcType="OTHER"/>
+        <result property="agencyexpName" column="AGENCYEXP_NAME" jdbcType="OTHER"/>
+        <result property="asCode" column="AS_CODE" jdbcType="OTHER"/>
+        <result property="asId" column="AS_ID" jdbcType="OTHER"/>
+        <result property="asName" column="AS_NAME" jdbcType="OTHER"/>
+        <result property="bacCode" column="BAC_CODE" jdbcType="OTHER"/>
+        <result property="bacId" column="BAC_ID" jdbcType="OTHER"/>
+        <result property="bacName" column="BAC_NAME" jdbcType="OTHER"/>
+        <result property="baiCode" column="BAI_CODE" jdbcType="OTHER"/>
+        <result property="baiId" column="BAI_ID" jdbcType="OTHER"/>
+        <result property="baiName" column="BAI_NAME" jdbcType="OTHER"/>
+        <result property="bapCode" column="BAP_CODE" jdbcType="OTHER"/>
+        <result property="bapId" column="BAP_ID" jdbcType="OTHER"/>
+        <result property="bapName" column="BAP_NAME" jdbcType="OTHER"/>
+        <result property="bcCode" column="BC_CODE" jdbcType="OTHER"/>
+        <result property="bcId" column="BC_ID" jdbcType="OTHER"/>
+        <result property="bcName" column="BC_NAME" jdbcType="OTHER"/>
+        <result property="bgtdirCode" column="BGTDIR_CODE" jdbcType="OTHER"/>
+        <result property="bgtdirId" column="BGTDIR_ID" jdbcType="OTHER"/>
+        <result property="bgtdirName" column="BGTDIR_NAME" jdbcType="OTHER"/>
+        <result property="bgtsourceCode" column="BGTSOURCE_CODE" jdbcType="OTHER"/>
+        <result property="bgtsourceId" column="BGTSOURCE_ID" jdbcType="OTHER"/>
+        <result property="bgtsourceName" column="BGTSOURCE_NAME" jdbcType="OTHER"/>
+        <result property="bgttypeCode" column="BGTTYPE_CODE" jdbcType="OTHER"/>
+        <result property="bgttypeId" column="BGTTYPE_ID" jdbcType="OTHER"/>
+        <result property="bgttypeName" column="BGTTYPE_NAME" jdbcType="OTHER"/>
+        <result property="bisCode" column="BIS_CODE" jdbcType="OTHER"/>
+        <result property="bisId" column="BIS_ID" jdbcType="OTHER"/>
+        <result property="bisName" column="BIS_NAME" jdbcType="OTHER"/>
+        <result property="bpCode" column="BP_CODE" jdbcType="OTHER"/>
+        <result property="bpId" column="BP_ID" jdbcType="OTHER"/>
+        <result property="bpName" column="BP_NAME" jdbcType="OTHER"/>
+        <result property="bsoCode" column="BSO_CODE" jdbcType="OTHER"/>
+        <result property="bsoId" column="BSO_ID" jdbcType="OTHER"/>
+        <result property="bsoName" column="BSO_NAME" jdbcType="OTHER"/>
+        <result property="budgetvouCode" column="BUDGETVOU_CODE" jdbcType="OTHER"/>
+        <result property="budgetvouId" column="BUDGETVOU_ID" jdbcType="OTHER"/>
+        <result property="budgetvouName" column="BUDGETVOU_NAME" jdbcType="OTHER"/>
+        <result property="cbCode" column="CB_CODE" jdbcType="OTHER"/>
+        <result property="cbId" column="CB_ID" jdbcType="OTHER"/>
+        <result property="cbName" column="CB_NAME" jdbcType="OTHER"/>
+        <result property="ccid" column="CCID" jdbcType="OTHER"/>
+        <result property="clearaccountName" column="CLEARACCOUNT_NAME" jdbcType="OTHER"/>
+        <result property="clearaccountbank" column="CLEARACCOUNTBANK" jdbcType="OTHER"/>
+        <result property="clearaccountno" column="CLEARACCOUNTNO" jdbcType="OTHER"/>
+        <result property="coaId" column="COA_ID" jdbcType="OTHER"/>
+        <result property="ctCode" column="CT_CODE" jdbcType="OTHER"/>
+        <result property="ctId" column="CT_ID" jdbcType="OTHER"/>
+        <result property="ctName" column="CT_NAME" jdbcType="OTHER"/>
+        <result property="dirCode" column="DIR_CODE" jdbcType="OTHER"/>
+        <result property="dirId" column="DIR_ID" jdbcType="OTHER"/>
+        <result property="dirName" column="DIR_NAME" jdbcType="OTHER"/>
+        <result property="editorCode" column="EDITOR_CODE" jdbcType="OTHER"/>
+        <result property="editorId" column="EDITOR_ID" jdbcType="OTHER"/>
+        <result property="editorName" column="EDITOR_NAME" jdbcType="OTHER"/>
+        <result property="expecoCode" column="EXPECO_CODE" jdbcType="OTHER"/>
+        <result property="expecoId" column="EXPECO_ID" jdbcType="OTHER"/>
+        <result property="expecoName" column="EXPECO_NAME" jdbcType="OTHER"/>
+        <result property="expfuncCode" column="EXPFUNC_CODE" jdbcType="OTHER"/>
+        <result property="expfuncId" column="EXPFUNC_ID" jdbcType="OTHER"/>
+        <result property="expfuncName" column="EXPFUNC_NAME" jdbcType="OTHER"/>
+        <result property="fasnCode" column="FASN_CODE" jdbcType="OTHER"/>
+        <result property="fasnId" column="FASN_ID" jdbcType="OTHER"/>
+        <result property="fasnName" column="FASN_NAME" jdbcType="OTHER"/>
+        <result property="ffCode" column="FF_CODE" jdbcType="OTHER"/>
+        <result property="ffId" column="FF_ID" jdbcType="OTHER"/>
+        <result property="ffName" column="FF_NAME" jdbcType="OTHER"/>
+        <result property="fileCode" column="FILE_CODE" jdbcType="OTHER"/>
+        <result property="fileId" column="FILE_ID" jdbcType="OTHER"/>
+        <result property="fileName" column="FILE_NAME" jdbcType="OTHER"/>
+        <result property="fmCode" column="FM_CODE" jdbcType="OTHER"/>
+        <result property="fmId" column="FM_ID" jdbcType="OTHER"/>
+        <result property="fmName" column="FM_NAME" jdbcType="OTHER"/>
+        <result property="fundtypeCode" column="FUNDTYPE_CODE" jdbcType="OTHER"/>
+        <result property="fundtypeId" column="FUNDTYPE_ID" jdbcType="OTHER"/>
+        <result property="fundtypeName" column="FUNDTYPE_NAME" jdbcType="OTHER"/>
+        <result property="govExpecoCode" column="GOVEXPECO_CODE" jdbcType="OTHER"/>
+        <result property="govExpecoId" column="GOVEXPECO_ID" jdbcType="OTHER"/>
+        <result property="govExpecoName" column="GOVEXPECO_NAME" jdbcType="OTHER"/>
+        <result property="gpAgencyCode" column="GP_AGENCY_CODE" jdbcType="OTHER"/>
+        <result property="gpAgencyId" column="GP_AGENCY_ID" jdbcType="OTHER"/>
+        <result property="gpAgencyName" column="GP_AGENCY_NAME" jdbcType="OTHER"/>
+        <result property="gpbarnCode" column="GPBARN_CODE" jdbcType="OTHER"/>
+        <result property="gpbarnId" column="GPBARN_ID" jdbcType="OTHER"/>
+        <result property="gpbarnName" column="GPBARN_NAME" jdbcType="OTHER"/>
+        <result property="gpplanCode" column="GPPLAN_CODE" jdbcType="OTHER"/>
+        <result property="gpplanId" column="GPPLAN_ID" jdbcType="OTHER"/>
+        <result property="gpplanName" column="GPPLAN_NAME" jdbcType="OTHER"/>
+        <result property="gpvouCode" column="GPVOU_CODE" jdbcType="OTHER"/>
+        <result property="gpvouId" column="GPVOU_ID" jdbcType="OTHER"/>
+        <result property="gpvouName" column="GPVOU_NAME" jdbcType="OTHER"/>
+        <result property="groupIdCode" column="GROUP_ID_CODE" jdbcType="OTHER"/>
+        <result property="groupIdId" column="GROUP_ID_ID" jdbcType="OTHER"/>
+        <result property="groupIdName" column="GROUP_ID_NAME" jdbcType="OTHER"/>
+        <result property="gzbsCode" column="GZBS_CODE" jdbcType="OTHER"/>
+        <result property="gzbsId" column="GZBS_ID" jdbcType="OTHER"/>
+        <result property="gzbsName" column="GZBS_NAME" jdbcType="OTHER"/>
+        <result property="ibCode" column="IB_CODE" jdbcType="OTHER"/>
+        <result property="ibId" column="IB_ID" jdbcType="OTHER"/>
+        <result property="ibName" column="IB_NAME" jdbcType="OTHER"/>
+        <result property="ienCode" column="IEN_CODE" jdbcType="OTHER"/>
+        <result property="ienId" column="IEN_ID" jdbcType="OTHER"/>
+        <result property="ienName" column="IEN_NAME" jdbcType="OTHER"/>
+        <result property="inBisCode" column="IN_BIS_CODE" jdbcType="OTHER"/>
+        <result property="inBisId" column="IN_BIS_ID" jdbcType="OTHER"/>
+        <result property="inBisName" column="IN_BIS_NAME" jdbcType="OTHER"/>
+        <result property="inBsCode" column="IN_BS_CODE" jdbcType="OTHER"/>
+        <result property="inBsId" column="IN_BS_ID" jdbcType="OTHER"/>
+        <result property="inBsName" column="IN_BS_NAME" jdbcType="OTHER"/>
+        <result property="incomeaccountName" column="INCOMEACCOUNT_NAME" jdbcType="OTHER"/>
+        <result property="incomeaccountbank" column="INCOMEACCOUNTBANK" jdbcType="OTHER"/>
+        <result property="incomeaccountno" column="INCOMEACCOUNTNO" jdbcType="OTHER"/>
+        <result property="inpmCode" column="INPM_CODE" jdbcType="OTHER"/>
+        <result property="inpmId" column="INPM_ID" jdbcType="OTHER"/>
+        <result property="inpmName" column="INPM_NAME" jdbcType="OTHER"/>
+        <result property="managebranchCode" column="MANAGEBRANCH_CODE" jdbcType="OTHER"/>
+        <result property="managebranchId" column="MANAGEBRANCH_ID" jdbcType="OTHER"/>
+        <result property="managebranchName" column="MANAGEBRANCH_NAME" jdbcType="OTHER"/>
+        <result property="mbCode" column="MB_CODE" jdbcType="OTHER"/>
+        <result property="mbId" column="MB_ID" jdbcType="OTHER"/>
+        <result property="mbName" column="MB_NAME" jdbcType="OTHER"/>
+        <result property="md5" column="MD5" jdbcType="OTHER"/>
+        <result property="modeCode" column="MODE_CODE" jdbcType="OTHER"/>
+        <result property="modeId" column="MODE_ID" jdbcType="OTHER"/>
+        <result property="modeName" column="MODE_NAME" jdbcType="OTHER"/>
+        <result property="opuserCode" column="OPUSER_CODE" jdbcType="OTHER"/>
+        <result property="opuserId" column="OPUSER_ID" jdbcType="OTHER"/>
+        <result property="opuserName" column="OPUSER_NAME" jdbcType="OTHER"/>
+        <result property="payaccountName" column="PAYACCOUNT_NAME" jdbcType="OTHER"/>
+        <result property="payaccountbank" column="PAYACCOUNTBANK" jdbcType="OTHER"/>
+        <result property="payaccountno" column="PAYACCOUNTNO" jdbcType="OTHER"/>
+        <result property="paykindCode" column="PAYKIND_CODE" jdbcType="OTHER"/>
+        <result property="paykindId" column="PAYKIND_ID" jdbcType="OTHER"/>
+        <result property="paykindName" column="PAYKIND_NAME" jdbcType="OTHER"/>
+        <result property="paytypeCode" column="PAYTYPE_CODE" jdbcType="OTHER"/>
+        <result property="paytypeId" column="PAYTYPE_ID" jdbcType="OTHER"/>
+        <result property="paytypeName" column="PAYTYPE_NAME" jdbcType="OTHER"/>
+        <result property="pbCode" column="PB_CODE" jdbcType="OTHER"/>
+        <result property="pbId" column="PB_ID" jdbcType="OTHER"/>
+        <result property="pbName" column="PB_NAME" jdbcType="OTHER"/>
+        <result property="pfCode" column="PF_CODE" jdbcType="OTHER"/>
+        <result property="pfId" column="PF_ID" jdbcType="OTHER"/>
+        <result property="pfName" column="PF_NAME" jdbcType="OTHER"/>
+        <result property="provCode" column="PROV_CODE" jdbcType="OTHER"/>
+        <result property="provId" column="PROV_ID" jdbcType="OTHER"/>
+        <result property="provName" column="PROV_NAME" jdbcType="OTHER"/>
+        <result property="setmodeCode" column="SETMODE_CODE" jdbcType="OTHER"/>
+        <result property="setmodeId" column="SETMODE_ID" jdbcType="OTHER"/>
+        <result property="setmodeName" column="SETMODE_NAME" jdbcType="OTHER"/>
+        <result property="smCode" column="SM_CODE" jdbcType="OTHER"/>
+        <result property="smId" column="SM_ID" jdbcType="OTHER"/>
+        <result property="smName" column="SM_NAME" jdbcType="OTHER"/>
+        <result property="stCode" column="ST_CODE" jdbcType="OTHER"/>
+        <result property="stId" column="ST_ID" jdbcType="OTHER"/>
+        <result property="stName" column="ST_NAME" jdbcType="OTHER"/>
+        <result property="useenCode" column="USEEN_CODE" jdbcType="OTHER"/>
+        <result property="useenId" column="USEEN_ID" jdbcType="OTHER"/>
+        <result property="useenName" column="USEEN_NAME" jdbcType="OTHER"/>
+        <result property="waCode" column="WA_CODE" jdbcType="OTHER"/>
+        <result property="waId" column="WA_ID" jdbcType="OTHER"/>
+        <result property="waName" column="WA_NAME" jdbcType="OTHER"/>
+        <result property="year" column="YEAR" jdbcType="OTHER"/>
+        <result property="zfcgbsCode" column="ZFCGBS_CODE" jdbcType="OTHER"/>
+        <result property="zfcgbsId" column="ZFCGBS_ID" jdbcType="OTHER"/>
+        <result property="zfcgbsName" column="ZFCGBS_NAME" jdbcType="OTHER"/>
+        <result property="hold10Code" column="HOLD10CODE" jdbcType="OTHER"/>
+        <result property="hold10Id" column="HOLD10ID" jdbcType="OTHER"/>
+        <result property="hold10Name" column="HOLD10NAME" jdbcType="OTHER"/>
+        <result property="hold1Code" column="HOLD1CODE" jdbcType="OTHER"/>
+        <result property="hold1Id" column="HOLD1ID" jdbcType="OTHER"/>
+        <result property="hold1Name" column="HOLD1NAME" jdbcType="OTHER"/>
+        <result property="hold2Code" column="HOLD2CODE" jdbcType="OTHER"/>
+        <result property="hold2Id" column="HOLD2ID" jdbcType="OTHER"/>
+        <result property="hold2Name" column="HOLD2NAME" jdbcType="OTHER"/>
+        <result property="hold3Code" column="HOLD3CODE" jdbcType="OTHER"/>
+        <result property="hold3Id" column="HOLD3ID" jdbcType="OTHER"/>
+        <result property="hold3Name" column="HOLD3NAME" jdbcType="OTHER"/>
+        <result property="hold4Code" column="HOLD4CODE" jdbcType="OTHER"/>
+        <result property="hold4Id" column="HOLD4ID" jdbcType="OTHER"/>
+        <result property="hold4Name" column="HOLD4NAME" jdbcType="OTHER"/>
+        <result property="hold5Code" column="HOLD5CODE" jdbcType="OTHER"/>
+        <result property="hold5Id" column="HOLD5ID" jdbcType="OTHER"/>
+        <result property="hold5Name" column="HOLD5NAME" jdbcType="OTHER"/>
+        <result property="hold6Code" column="HOLD6CODE" jdbcType="OTHER"/>
+        <result property="hold6Id" column="HOLD6ID" jdbcType="OTHER"/>
+        <result property="hold6Name" column="HOLD6NAME" jdbcType="OTHER"/>
+        <result property="hold7Code" column="HOLD7CODE" jdbcType="OTHER"/>
+        <result property="hold7Id" column="HOLD7ID" jdbcType="OTHER"/>
+        <result property="hold7Name" column="HOLD7NAME" jdbcType="OTHER"/>
+        <result property="hold8Code" column="HOLD8CODE" jdbcType="OTHER"/>
+        <result property="hold8Id" column="HOLD8ID" jdbcType="OTHER"/>
+        <result property="hold8Name" column="HOLD8NAME" jdbcType="OTHER"/>
+        <result property="hold9Code" column="HOLD9CODE" jdbcType="OTHER"/>
+        <result property="hold9Id" column="HOLD9ID" jdbcType="OTHER"/>
+        <result property="hold9Name" column="HOLD9NAME" jdbcType="OTHER"/>
+        <result property="budgetgroupCode" column="BUDGETGROUP_CODE" jdbcType="OTHER"/>
+        <result property="budgetgroupId" column="BUDGETGROUP_ID" jdbcType="OTHER"/>
+        <result property="budgetgroupName" column="BUDGETGROUP_NAME" jdbcType="OTHER"/>
+        <result property="catalogueCode" column="CATALOGUE_CODE" jdbcType="OTHER"/>
+        <result property="catalogueId" column="CATALOGUE_ID" jdbcType="OTHER"/>
+        <result property="catalogueName" column="CATALOGUE_NAME" jdbcType="OTHER"/>
+        <result property="filesuperCode" column="FILESUPER_CODE" jdbcType="OTHER"/>
+        <result property="filesuperId" column="FILESUPER_ID" jdbcType="OTHER"/>
+        <result property="filesuperName" column="FILESUPER_NAME" jdbcType="OTHER"/>
+        <result property="projectsCode" column="PROJECTS_CODE" jdbcType="OTHER"/>
+        <result property="projectsId" column="PROJECTS_ID" jdbcType="OTHER"/>
+        <result property="projectsName" column="PROJECTS_NAME" jdbcType="OTHER"/>
+        <result property="specialstaffCode" column="SPECIALSTAFF_CODE" jdbcType="OTHER"/>
+        <result property="specialstaffId" column="SPECIALSTAFF_ID" jdbcType="OTHER"/>
+        <result property="specialstaffName" column="SPECIALSTAFF_NAME" jdbcType="OTHER"/>
+        <result property="puritemCode" column="PURITEM_CODE" jdbcType="OTHER"/>
+        <result property="puritemId" column="PURITEM_ID" jdbcType="OTHER"/>
+        <result property="puritemName" column="PURITEM_NAME" jdbcType="OTHER"/>
+        <result property="supbgtdocnoCode" column="SUPBGTDOCNO_CODE" jdbcType="OTHER"/>
+        <result property="supbgtdocnoId" column="SUPBGTDOCNO_ID" jdbcType="OTHER"/>
+        <result property="supbgtdocnoName" column="SUPBGTDOCNO_NAME" jdbcType="OTHER"/>
+        <result property="accountTypeCode" column="ACCOUNT_TYPE_CODE" jdbcType="OTHER"/>
+        <result property="accountTypeId" column="ACCOUNT_TYPE_ID" jdbcType="OTHER"/>
+        <result property="accountTypeName" column="ACCOUNT_TYPE_NAME" jdbcType="OTHER"/>
+        <result property="accountczTypeCode" column="ACCOUNTCZ_TYPE_CODE" jdbcType="OTHER"/>
+        <result property="accountczTypeId" column="ACCOUNTCZ_TYPE_ID" jdbcType="OTHER"/>
+        <result property="accountczTypeName" column="ACCOUNTCZ_TYPE_NAME" jdbcType="OTHER"/>
+        <result property="agentAccountCode" column="AGENT_ACCOUNT_CODE" jdbcType="OTHER"/>
+        <result property="agentAccountId" column="AGENT_ACCOUNT_ID" jdbcType="OTHER"/>
+        <result property="agentAccountName" column="AGENT_ACCOUNT_NAME" jdbcType="OTHER"/>
+        <result property="paySummaryCode" column="PAY_SUMMARY_CODE" jdbcType="OTHER"/>
+        <result property="paySummaryId" column="PAY_SUMMARY_ID" jdbcType="OTHER"/>
+        <result property="paySummaryName" column="PAY_SUMMARY_NAME" jdbcType="OTHER"/>
+        <result property="tbCode" column="TB_CODE" jdbcType="OTHER"/>
+        <result property="tbId" column="TB_ID" jdbcType="OTHER"/>
+        <result property="tbName" column="TB_NAME" jdbcType="OTHER"/>
+        <result property="ifaccCode" column="IFACC_CODE" jdbcType="OTHER"/>
+        <result property="ifaccId" column="IFACC_ID" jdbcType="OTHER"/>
+        <result property="ifaccName" column="IFACC_NAME" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ADM_DIV_CODE, AE_CODE, AE_ID, AE_NAME, AGENCY_CODE, AGENCY_ID, AGENCY_NAME, AGENCYEXP_CODE, AGENCYEXP_ID, AGENCYEXP_NAME, AS_CODE, AS_ID, AS_NAME, BAC_CODE, BAC_ID, BAC_NAME, BAI_CODE, BAI_ID, BAI_NAME, BAP_CODE, BAP_ID, BAP_NAME, BC_CODE, BC_ID, BC_NAME, BGTDIR_CODE, BGTDIR_ID, BGTDIR_NAME, BGTSOURCE_CODE, BGTSOURCE_ID, BGTSOURCE_NAME, BGTTYPE_CODE, BGTTYPE_ID, BGTTYPE_NAME, BIS_CODE, BIS_ID, BIS_NAME, BP_CODE, BP_ID, BP_NAME, BSO_CODE, BSO_ID, BSO_NAME, BUDGETVOU_CODE, BUDGETVOU_ID, BUDGETVOU_NAME, CB_CODE, CB_ID, CB_NAME, CCID, CLEARACCOUNT_NAME, CLEARACCOUNTBANK, CLEARACCOUNTNO, COA_ID, CT_CODE, CT_ID, CT_NAME, DIR_CODE, DIR_ID, DIR_NAME, EDITOR_CODE, EDITOR_ID, EDITOR_NAME, EXPECO_CODE, EXPECO_ID, EXPECO_NAME, EXPFUNC_CODE, EXPFUNC_ID, EXPFUNC_NAME, FASN_CODE, FASN_ID, FASN_NAME, FF_CODE, FF_ID, FF_NAME, FILE_CODE, FILE_ID, FILE_NAME, FM_CODE, FM_ID, FM_NAME, FUNDTYPE_CODE, FUNDTYPE_ID, FUNDTYPE_NAME, GOVEXPECO_CODE, GOVEXPECO_ID, GOVEXPECO_NAME, GP_AGENCY_CODE, GP_AGENCY_ID, GP_AGENCY_NAME, GPBARN_CODE, GPBARN_ID, GPBARN_NAME, GPPLAN_CODE, GPPLAN_ID, GPPLAN_NAME, GPVOU_CODE, GPVOU_ID, GPVOU_NAME, GROUP_ID_CODE, GROUP_ID_ID, GROUP_ID_NAME, GZBS_CODE, GZBS_ID, GZBS_NAME, IB_CODE, IB_ID, IB_NAME, IEN_CODE, IEN_ID, IEN_NAME, IN_BIS_CODE, IN_BIS_ID, IN_BIS_NAME, IN_BS_CODE, IN_BS_ID, IN_BS_NAME, INCOMEACCOUNT_NAME, INCOMEACCOUNTBANK, INCOMEACCOUNTNO, INPM_CODE, INPM_ID, INPM_NAME, MANAGEBRANCH_CODE, MANAGEBRANCH_ID, MANAGEBRANCH_NAME, MB_CODE, MB_ID, MB_NAME, MD5, MODE_CODE, MODE_ID, MODE_NAME, OPUSER_CODE, OPUSER_ID, OPUSER_NAME, PAYACCOUNT_NAME, PAYACCOUNTBANK, PAYACCOUNTNO, PAYKIND_CODE, PAYKIND_ID, PAYKIND_NAME, PAYTYPE_CODE, PAYTYPE_ID, PAYTYPE_NAME, PB_CODE, PB_ID, PB_NAME, PF_CODE, PF_ID, PF_NAME, PROV_CODE, PROV_ID, PROV_NAME, SETMODE_CODE, SETMODE_ID, SETMODE_NAME, SM_CODE, SM_ID, SM_NAME, ST_CODE, ST_ID, ST_NAME, USEEN_CODE, USEEN_ID, USEEN_NAME, WA_CODE, WA_ID, WA_NAME, YEAR, ZFCGBS_CODE, ZFCGBS_ID, ZFCGBS_NAME, HOLD10CODE, HOLD10ID, HOLD10NAME, HOLD1CODE, HOLD1ID, HOLD1NAME, HOLD2CODE, HOLD2ID, HOLD2NAME, HOLD3CODE, HOLD3ID, HOLD3NAME, HOLD4CODE, HOLD4ID, HOLD4NAME, HOLD5CODE, HOLD5ID, HOLD5NAME, HOLD6CODE, HOLD6ID, HOLD6NAME, HOLD7CODE, HOLD7ID, HOLD7NAME, HOLD8CODE, HOLD8ID, HOLD8NAME, HOLD9CODE, HOLD9ID, HOLD9NAME, BUDGETGROUP_CODE, BUDGETGROUP_ID, BUDGETGROUP_NAME, CATALOGUE_CODE, CATALOGUE_ID, CATALOGUE_NAME, FILESUPER_CODE, FILESUPER_ID, FILESUPER_NAME, PROJECTS_CODE, PROJECTS_ID, PROJECTS_NAME, SPECIALSTAFF_CODE, SPECIALSTAFF_ID, SPECIALSTAFF_NAME, PURITEM_CODE, PURITEM_ID, PURITEM_NAME, SUPBGTDOCNO_CODE, SUPBGTDOCNO_ID, SUPBGTDOCNO_NAME, ACCOUNT_TYPE_CODE, ACCOUNT_TYPE_ID, ACCOUNT_TYPE_NAME, ACCOUNTCZ_TYPE_CODE, ACCOUNTCZ_TYPE_ID, ACCOUNTCZ_TYPE_NAME, AGENT_ACCOUNT_CODE, AGENT_ACCOUNT_ID, AGENT_ACCOUNT_NAME, PAY_SUMMARY_CODE, PAY_SUMMARY_ID, PAY_SUMMARY_NAME, TB_CODE, TB_ID, TB_NAME, IFACC_CODE, IFACC_ID, IFACC_NAME
+        from DFDEVDF0114.FGL_CCIDS
+        where ID = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ADM_DIV_CODE, AE_CODE, AE_ID, AE_NAME, AGENCY_CODE, AGENCY_ID, AGENCY_NAME, AGENCYEXP_CODE, AGENCYEXP_ID, AGENCYEXP_NAME, AS_CODE, AS_ID, AS_NAME, BAC_CODE, BAC_ID, BAC_NAME, BAI_CODE, BAI_ID, BAI_NAME, BAP_CODE, BAP_ID, BAP_NAME, BC_CODE, BC_ID, BC_NAME, BGTDIR_CODE, BGTDIR_ID, BGTDIR_NAME, BGTSOURCE_CODE, BGTSOURCE_ID, BGTSOURCE_NAME, BGTTYPE_CODE, BGTTYPE_ID, BGTTYPE_NAME, BIS_CODE, BIS_ID, BIS_NAME, BP_CODE, BP_ID, BP_NAME, BSO_CODE, BSO_ID, BSO_NAME, BUDGETVOU_CODE, BUDGETVOU_ID, BUDGETVOU_NAME, CB_CODE, CB_ID, CB_NAME, CCID, CLEARACCOUNT_NAME, CLEARACCOUNTBANK, CLEARACCOUNTNO, COA_ID, CT_CODE, CT_ID, CT_NAME, DIR_CODE, DIR_ID, DIR_NAME, EDITOR_CODE, EDITOR_ID, EDITOR_NAME, EXPECO_CODE, EXPECO_ID, EXPECO_NAME, EXPFUNC_CODE, EXPFUNC_ID, EXPFUNC_NAME, FASN_CODE, FASN_ID, FASN_NAME, FF_CODE, FF_ID, FF_NAME, FILE_CODE, FILE_ID, FILE_NAME, FM_CODE, FM_ID, FM_NAME, FUNDTYPE_CODE, FUNDTYPE_ID, FUNDTYPE_NAME, GOVEXPECO_CODE, GOVEXPECO_ID, GOVEXPECO_NAME, GP_AGENCY_CODE, GP_AGENCY_ID, GP_AGENCY_NAME, GPBARN_CODE, GPBARN_ID, GPBARN_NAME, GPPLAN_CODE, GPPLAN_ID, GPPLAN_NAME, GPVOU_CODE, GPVOU_ID, GPVOU_NAME, GROUP_ID_CODE, GROUP_ID_ID, GROUP_ID_NAME, GZBS_CODE, GZBS_ID, GZBS_NAME, IB_CODE, IB_ID, IB_NAME, IEN_CODE, IEN_ID, IEN_NAME, IN_BIS_CODE, IN_BIS_ID, IN_BIS_NAME, IN_BS_CODE, IN_BS_ID, IN_BS_NAME, INCOMEACCOUNT_NAME, INCOMEACCOUNTBANK, INCOMEACCOUNTNO, INPM_CODE, INPM_ID, INPM_NAME, MANAGEBRANCH_CODE, MANAGEBRANCH_ID, MANAGEBRANCH_NAME, MB_CODE, MB_ID, MB_NAME, MD5, MODE_CODE, MODE_ID, MODE_NAME, OPUSER_CODE, OPUSER_ID, OPUSER_NAME, PAYACCOUNT_NAME, PAYACCOUNTBANK, PAYACCOUNTNO, PAYKIND_CODE, PAYKIND_ID, PAYKIND_NAME, PAYTYPE_CODE, PAYTYPE_ID, PAYTYPE_NAME, PB_CODE, PB_ID, PB_NAME, PF_CODE, PF_ID, PF_NAME, PROV_CODE, PROV_ID, PROV_NAME, SETMODE_CODE, SETMODE_ID, SETMODE_NAME, SM_CODE, SM_ID, SM_NAME, ST_CODE, ST_ID, ST_NAME, USEEN_CODE, USEEN_ID, USEEN_NAME, WA_CODE, WA_ID, WA_NAME, YEAR, ZFCGBS_CODE, ZFCGBS_ID, ZFCGBS_NAME, HOLD10CODE, HOLD10ID, HOLD10NAME, HOLD1CODE, HOLD1ID, HOLD1NAME, HOLD2CODE, HOLD2ID, HOLD2NAME, HOLD3CODE, HOLD3ID, HOLD3NAME, HOLD4CODE, HOLD4ID, HOLD4NAME, HOLD5CODE, HOLD5ID, HOLD5NAME, HOLD6CODE, HOLD6ID, HOLD6NAME, HOLD7CODE, HOLD7ID, HOLD7NAME, HOLD8CODE, HOLD8ID, HOLD8NAME, HOLD9CODE, HOLD9ID, HOLD9NAME, BUDGETGROUP_CODE, BUDGETGROUP_ID, BUDGETGROUP_NAME, CATALOGUE_CODE, CATALOGUE_ID, CATALOGUE_NAME, FILESUPER_CODE, FILESUPER_ID, FILESUPER_NAME, PROJECTS_CODE, PROJECTS_ID, PROJECTS_NAME, SPECIALSTAFF_CODE, SPECIALSTAFF_ID, SPECIALSTAFF_NAME, PURITEM_CODE, PURITEM_ID, PURITEM_NAME, SUPBGTDOCNO_CODE, SUPBGTDOCNO_ID, SUPBGTDOCNO_NAME, ACCOUNT_TYPE_CODE, ACCOUNT_TYPE_ID, ACCOUNT_TYPE_NAME, ACCOUNTCZ_TYPE_CODE, ACCOUNTCZ_TYPE_ID, ACCOUNTCZ_TYPE_NAME, AGENT_ACCOUNT_CODE, AGENT_ACCOUNT_ID, AGENT_ACCOUNT_NAME, PAY_SUMMARY_CODE, PAY_SUMMARY_ID, PAY_SUMMARY_NAME, TB_CODE, TB_ID, TB_NAME, IFACC_CODE, IFACC_ID, IFACC_NAME
+        from DFDEVDF0114.FGL_CCIDS
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ADM_DIV_CODE, AE_CODE, AE_ID, AE_NAME, AGENCY_CODE, AGENCY_ID, AGENCY_NAME, AGENCYEXP_CODE, AGENCYEXP_ID, AGENCYEXP_NAME, AS_CODE, AS_ID, AS_NAME, BAC_CODE, BAC_ID, BAC_NAME, BAI_CODE, BAI_ID, BAI_NAME, BAP_CODE, BAP_ID, BAP_NAME, BC_CODE, BC_ID, BC_NAME, BGTDIR_CODE, BGTDIR_ID, BGTDIR_NAME, BGTSOURCE_CODE, BGTSOURCE_ID, BGTSOURCE_NAME, BGTTYPE_CODE, BGTTYPE_ID, BGTTYPE_NAME, BIS_CODE, BIS_ID, BIS_NAME, BP_CODE, BP_ID, BP_NAME, BSO_CODE, BSO_ID, BSO_NAME, BUDGETVOU_CODE, BUDGETVOU_ID, BUDGETVOU_NAME, CB_CODE, CB_ID, CB_NAME, CCID, CLEARACCOUNT_NAME, CLEARACCOUNTBANK, CLEARACCOUNTNO, COA_ID, CT_CODE, CT_ID, CT_NAME, DIR_CODE, DIR_ID, DIR_NAME, EDITOR_CODE, EDITOR_ID, EDITOR_NAME, EXPECO_CODE, EXPECO_ID, EXPECO_NAME, EXPFUNC_CODE, EXPFUNC_ID, EXPFUNC_NAME, FASN_CODE, FASN_ID, FASN_NAME, FF_CODE, FF_ID, FF_NAME, FILE_CODE, FILE_ID, FILE_NAME, FM_CODE, FM_ID, FM_NAME, FUNDTYPE_CODE, FUNDTYPE_ID, FUNDTYPE_NAME, GOVEXPECO_CODE, GOVEXPECO_ID, GOVEXPECO_NAME, GP_AGENCY_CODE, GP_AGENCY_ID, GP_AGENCY_NAME, GPBARN_CODE, GPBARN_ID, GPBARN_NAME, GPPLAN_CODE, GPPLAN_ID, GPPLAN_NAME, GPVOU_CODE, GPVOU_ID, GPVOU_NAME, GROUP_ID_CODE, GROUP_ID_ID, GROUP_ID_NAME, GZBS_CODE, GZBS_ID, GZBS_NAME, IB_CODE, IB_ID, IB_NAME, IEN_CODE, IEN_ID, IEN_NAME, IN_BIS_CODE, IN_BIS_ID, IN_BIS_NAME, IN_BS_CODE, IN_BS_ID, IN_BS_NAME, INCOMEACCOUNT_NAME, INCOMEACCOUNTBANK, INCOMEACCOUNTNO, INPM_CODE, INPM_ID, INPM_NAME, MANAGEBRANCH_CODE, MANAGEBRANCH_ID, MANAGEBRANCH_NAME, MB_CODE, MB_ID, MB_NAME, MD5, MODE_CODE, MODE_ID, MODE_NAME, OPUSER_CODE, OPUSER_ID, OPUSER_NAME, PAYACCOUNT_NAME, PAYACCOUNTBANK, PAYACCOUNTNO, PAYKIND_CODE, PAYKIND_ID, PAYKIND_NAME, PAYTYPE_CODE, PAYTYPE_ID, PAYTYPE_NAME, PB_CODE, PB_ID, PB_NAME, PF_CODE, PF_ID, PF_NAME, PROV_CODE, PROV_ID, PROV_NAME, SETMODE_CODE, SETMODE_ID, SETMODE_NAME, SM_CODE, SM_ID, SM_NAME, ST_CODE, ST_ID, ST_NAME, USEEN_CODE, USEEN_ID, USEEN_NAME, WA_CODE, WA_ID, WA_NAME, YEAR, ZFCGBS_CODE, ZFCGBS_ID, ZFCGBS_NAME, HOLD10CODE, HOLD10ID, HOLD10NAME, HOLD1CODE, HOLD1ID, HOLD1NAME, HOLD2CODE, HOLD2ID, HOLD2NAME, HOLD3CODE, HOLD3ID, HOLD3NAME, HOLD4CODE, HOLD4ID, HOLD4NAME, HOLD5CODE, HOLD5ID, HOLD5NAME, HOLD6CODE, HOLD6ID, HOLD6NAME, HOLD7CODE, HOLD7ID, HOLD7NAME, HOLD8CODE, HOLD8ID, HOLD8NAME, HOLD9CODE, HOLD9ID, HOLD9NAME, BUDGETGROUP_CODE, BUDGETGROUP_ID, BUDGETGROUP_NAME, CATALOGUE_CODE, CATALOGUE_ID, CATALOGUE_NAME, FILESUPER_CODE, FILESUPER_ID, FILESUPER_NAME, PROJECTS_CODE, PROJECTS_ID, PROJECTS_NAME, SPECIALSTAFF_CODE, SPECIALSTAFF_ID, SPECIALSTAFF_NAME, PURITEM_CODE, PURITEM_ID, PURITEM_NAME, SUPBGTDOCNO_CODE, SUPBGTDOCNO_ID, SUPBGTDOCNO_NAME, ACCOUNT_TYPE_CODE, ACCOUNT_TYPE_ID, ACCOUNT_TYPE_NAME, ACCOUNTCZ_TYPE_CODE, ACCOUNTCZ_TYPE_ID, ACCOUNTCZ_TYPE_NAME, AGENT_ACCOUNT_CODE, AGENT_ACCOUNT_ID, AGENT_ACCOUNT_NAME, PAY_SUMMARY_CODE, PAY_SUMMARY_ID, PAY_SUMMARY_NAME, TB_CODE, TB_ID, TB_NAME, IFACC_CODE, IFACC_ID, IFACC_NAME
+        from DFDEVDF0114.FGL_CCIDS
+        <where>
+            <if test="id != null">
+                and ID = #{id}
+            </if>
+            <if test="createBy != null">
+                and CREATE_BY = #{createBy}
+            </if>
+            <if test="createDate != null">
+                and CREATE_DATE = #{createDate}
+            </if>
+            <if test="lastModifiedBy != null">
+                and LAST_MODIFIED_BY = #{lastModifiedBy}
+            </if>
+            <if test="lastModifiedDate != null">
+                and LAST_MODIFIED_DATE = #{lastModifiedDate}
+            </if>
+            <if test="lastModifiedVersion != null">
+                and LAST_MODIFIED_VERSION = #{lastModifiedVersion}
+            </if>
+            <if test="admDivCode != null">
+                and ADM_DIV_CODE = #{admDivCode}
+            </if>
+            <if test="aeCode != null">
+                and AE_CODE = #{aeCode}
+            </if>
+            <if test="aeId != null">
+                and AE_ID = #{aeId}
+            </if>
+            <if test="aeName != null">
+                and AE_NAME = #{aeName}
+            </if>
+            <if test="agencyCode != null">
+                and AGENCY_CODE = #{agencyCode}
+            </if>
+            <if test="agencyId != null">
+                and AGENCY_ID = #{agencyId}
+            </if>
+            <if test="agencyName != null">
+                and AGENCY_NAME = #{agencyName}
+            </if>
+            <if test="agencyexpCode != null">
+                and AGENCYEXP_CODE = #{agencyexpCode}
+            </if>
+            <if test="agencyexpId != null">
+                and AGENCYEXP_ID = #{agencyexpId}
+            </if>
+            <if test="agencyexpName != null">
+                and AGENCYEXP_NAME = #{agencyexpName}
+            </if>
+            <if test="asCode != null">
+                and AS_CODE = #{asCode}
+            </if>
+            <if test="asId != null">
+                and AS_ID = #{asId}
+            </if>
+            <if test="asName != null">
+                and AS_NAME = #{asName}
+            </if>
+            <if test="bacCode != null">
+                and BAC_CODE = #{bacCode}
+            </if>
+            <if test="bacId != null">
+                and BAC_ID = #{bacId}
+            </if>
+            <if test="bacName != null">
+                and BAC_NAME = #{bacName}
+            </if>
+            <if test="baiCode != null">
+                and BAI_CODE = #{baiCode}
+            </if>
+            <if test="baiId != null">
+                and BAI_ID = #{baiId}
+            </if>
+            <if test="baiName != null">
+                and BAI_NAME = #{baiName}
+            </if>
+            <if test="bapCode != null">
+                and BAP_CODE = #{bapCode}
+            </if>
+            <if test="bapId != null">
+                and BAP_ID = #{bapId}
+            </if>
+            <if test="bapName != null">
+                and BAP_NAME = #{bapName}
+            </if>
+            <if test="bcCode != null">
+                and BC_CODE = #{bcCode}
+            </if>
+            <if test="bcId != null">
+                and BC_ID = #{bcId}
+            </if>
+            <if test="bcName != null">
+                and BC_NAME = #{bcName}
+            </if>
+            <if test="bgtdirCode != null">
+                and BGTDIR_CODE = #{bgtdirCode}
+            </if>
+            <if test="bgtdirId != null">
+                and BGTDIR_ID = #{bgtdirId}
+            </if>
+            <if test="bgtdirName != null">
+                and BGTDIR_NAME = #{bgtdirName}
+            </if>
+            <if test="bgtsourceCode != null">
+                and BGTSOURCE_CODE = #{bgtsourceCode}
+            </if>
+            <if test="bgtsourceId != null">
+                and BGTSOURCE_ID = #{bgtsourceId}
+            </if>
+            <if test="bgtsourceName != null">
+                and BGTSOURCE_NAME = #{bgtsourceName}
+            </if>
+            <if test="bgttypeCode != null">
+                and BGTTYPE_CODE = #{bgttypeCode}
+            </if>
+            <if test="bgttypeId != null">
+                and BGTTYPE_ID = #{bgttypeId}
+            </if>
+            <if test="bgttypeName != null">
+                and BGTTYPE_NAME = #{bgttypeName}
+            </if>
+            <if test="bisCode != null">
+                and BIS_CODE = #{bisCode}
+            </if>
+            <if test="bisId != null">
+                and BIS_ID = #{bisId}
+            </if>
+            <if test="bisName != null">
+                and BIS_NAME = #{bisName}
+            </if>
+            <if test="bpCode != null">
+                and BP_CODE = #{bpCode}
+            </if>
+            <if test="bpId != null">
+                and BP_ID = #{bpId}
+            </if>
+            <if test="bpName != null">
+                and BP_NAME = #{bpName}
+            </if>
+            <if test="bsoCode != null">
+                and BSO_CODE = #{bsoCode}
+            </if>
+            <if test="bsoId != null">
+                and BSO_ID = #{bsoId}
+            </if>
+            <if test="bsoName != null">
+                and BSO_NAME = #{bsoName}
+            </if>
+            <if test="budgetvouCode != null">
+                and BUDGETVOU_CODE = #{budgetvouCode}
+            </if>
+            <if test="budgetvouId != null">
+                and BUDGETVOU_ID = #{budgetvouId}
+            </if>
+            <if test="budgetvouName != null">
+                and BUDGETVOU_NAME = #{budgetvouName}
+            </if>
+            <if test="cbCode != null">
+                and CB_CODE = #{cbCode}
+            </if>
+            <if test="cbId != null">
+                and CB_ID = #{cbId}
+            </if>
+            <if test="cbName != null">
+                and CB_NAME = #{cbName}
+            </if>
+            <if test="ccid != null">
+                and CCID = #{ccid}
+            </if>
+            <if test="clearaccountName != null">
+                and CLEARACCOUNT_NAME = #{clearaccountName}
+            </if>
+            <if test="clearaccountbank != null">
+                and CLEARACCOUNTBANK = #{clearaccountbank}
+            </if>
+            <if test="clearaccountno != null">
+                and CLEARACCOUNTNO = #{clearaccountno}
+            </if>
+            <if test="coaId != null">
+                and COA_ID = #{coaId}
+            </if>
+            <if test="ctCode != null">
+                and CT_CODE = #{ctCode}
+            </if>
+            <if test="ctId != null">
+                and CT_ID = #{ctId}
+            </if>
+            <if test="ctName != null">
+                and CT_NAME = #{ctName}
+            </if>
+            <if test="dirCode != null">
+                and DIR_CODE = #{dirCode}
+            </if>
+            <if test="dirId != null">
+                and DIR_ID = #{dirId}
+            </if>
+            <if test="dirName != null">
+                and DIR_NAME = #{dirName}
+            </if>
+            <if test="editorCode != null">
+                and EDITOR_CODE = #{editorCode}
+            </if>
+            <if test="editorId != null">
+                and EDITOR_ID = #{editorId}
+            </if>
+            <if test="editorName != null">
+                and EDITOR_NAME = #{editorName}
+            </if>
+            <if test="expecoCode != null">
+                and EXPECO_CODE = #{expecoCode}
+            </if>
+            <if test="expecoId != null">
+                and EXPECO_ID = #{expecoId}
+            </if>
+            <if test="expecoName != null">
+                and EXPECO_NAME = #{expecoName}
+            </if>
+            <if test="expfuncCode != null">
+                and EXPFUNC_CODE = #{expfuncCode}
+            </if>
+            <if test="expfuncId != null">
+                and EXPFUNC_ID = #{expfuncId}
+            </if>
+            <if test="expfuncName != null">
+                and EXPFUNC_NAME = #{expfuncName}
+            </if>
+            <if test="fasnCode != null">
+                and FASN_CODE = #{fasnCode}
+            </if>
+            <if test="fasnId != null">
+                and FASN_ID = #{fasnId}
+            </if>
+            <if test="fasnName != null">
+                and FASN_NAME = #{fasnName}
+            </if>
+            <if test="ffCode != null">
+                and FF_CODE = #{ffCode}
+            </if>
+            <if test="ffId != null">
+                and FF_ID = #{ffId}
+            </if>
+            <if test="ffName != null">
+                and FF_NAME = #{ffName}
+            </if>
+            <if test="fileCode != null">
+                and FILE_CODE = #{fileCode}
+            </if>
+            <if test="fileId != null">
+                and FILE_ID = #{fileId}
+            </if>
+            <if test="fileName != null">
+                and FILE_NAME = #{fileName}
+            </if>
+            <if test="fmCode != null">
+                and FM_CODE = #{fmCode}
+            </if>
+            <if test="fmId != null">
+                and FM_ID = #{fmId}
+            </if>
+            <if test="fmName != null">
+                and FM_NAME = #{fmName}
+            </if>
+            <if test="fundtypeCode != null">
+                and FUNDTYPE_CODE = #{fundtypeCode}
+            </if>
+            <if test="fundtypeId != null">
+                and FUNDTYPE_ID = #{fundtypeId}
+            </if>
+            <if test="fundtypeName != null">
+                and FUNDTYPE_NAME = #{fundtypeName}
+            </if>
+            <if test="govexpecoCode != null">
+                and GOVEXPECO_CODE = #{govexpecoCode}
+            </if>
+            <if test="govexpecoId != null">
+                and GOVEXPECO_ID = #{govexpecoId}
+            </if>
+            <if test="govexpecoName != null">
+                and GOVEXPECO_NAME = #{govexpecoName}
+            </if>
+            <if test="gpAgencyCode != null">
+                and GP_AGENCY_CODE = #{gpAgencyCode}
+            </if>
+            <if test="gpAgencyId != null">
+                and GP_AGENCY_ID = #{gpAgencyId}
+            </if>
+            <if test="gpAgencyName != null">
+                and GP_AGENCY_NAME = #{gpAgencyName}
+            </if>
+            <if test="gpbarnCode != null">
+                and GPBARN_CODE = #{gpbarnCode}
+            </if>
+            <if test="gpbarnId != null">
+                and GPBARN_ID = #{gpbarnId}
+            </if>
+            <if test="gpbarnName != null">
+                and GPBARN_NAME = #{gpbarnName}
+            </if>
+            <if test="gpplanCode != null">
+                and GPPLAN_CODE = #{gpplanCode}
+            </if>
+            <if test="gpplanId != null">
+                and GPPLAN_ID = #{gpplanId}
+            </if>
+            <if test="gpplanName != null">
+                and GPPLAN_NAME = #{gpplanName}
+            </if>
+            <if test="gpvouCode != null">
+                and GPVOU_CODE = #{gpvouCode}
+            </if>
+            <if test="gpvouId != null">
+                and GPVOU_ID = #{gpvouId}
+            </if>
+            <if test="gpvouName != null">
+                and GPVOU_NAME = #{gpvouName}
+            </if>
+            <if test="groupIdCode != null">
+                and GROUP_ID_CODE = #{groupIdCode}
+            </if>
+            <if test="groupIdId != null">
+                and GROUP_ID_ID = #{groupIdId}
+            </if>
+            <if test="groupIdName != null">
+                and GROUP_ID_NAME = #{groupIdName}
+            </if>
+            <if test="gzbsCode != null">
+                and GZBS_CODE = #{gzbsCode}
+            </if>
+            <if test="gzbsId != null">
+                and GZBS_ID = #{gzbsId}
+            </if>
+            <if test="gzbsName != null">
+                and GZBS_NAME = #{gzbsName}
+            </if>
+            <if test="ibCode != null">
+                and IB_CODE = #{ibCode}
+            </if>
+            <if test="ibId != null">
+                and IB_ID = #{ibId}
+            </if>
+            <if test="ibName != null">
+                and IB_NAME = #{ibName}
+            </if>
+            <if test="ienCode != null">
+                and IEN_CODE = #{ienCode}
+            </if>
+            <if test="ienId != null">
+                and IEN_ID = #{ienId}
+            </if>
+            <if test="ienName != null">
+                and IEN_NAME = #{ienName}
+            </if>
+            <if test="inBisCode != null">
+                and IN_BIS_CODE = #{inBisCode}
+            </if>
+            <if test="inBisId != null">
+                and IN_BIS_ID = #{inBisId}
+            </if>
+            <if test="inBisName != null">
+                and IN_BIS_NAME = #{inBisName}
+            </if>
+            <if test="inBsCode != null">
+                and IN_BS_CODE = #{inBsCode}
+            </if>
+            <if test="inBsId != null">
+                and IN_BS_ID = #{inBsId}
+            </if>
+            <if test="inBsName != null">
+                and IN_BS_NAME = #{inBsName}
+            </if>
+            <if test="incomeaccountName != null">
+                and INCOMEACCOUNT_NAME = #{incomeaccountName}
+            </if>
+            <if test="incomeaccountbank != null">
+                and INCOMEACCOUNTBANK = #{incomeaccountbank}
+            </if>
+            <if test="incomeaccountno != null">
+                and INCOMEACCOUNTNO = #{incomeaccountno}
+            </if>
+            <if test="inpmCode != null">
+                and INPM_CODE = #{inpmCode}
+            </if>
+            <if test="inpmId != null">
+                and INPM_ID = #{inpmId}
+            </if>
+            <if test="inpmName != null">
+                and INPM_NAME = #{inpmName}
+            </if>
+            <if test="managebranchCode != null">
+                and MANAGEBRANCH_CODE = #{managebranchCode}
+            </if>
+            <if test="managebranchId != null">
+                and MANAGEBRANCH_ID = #{managebranchId}
+            </if>
+            <if test="managebranchName != null">
+                and MANAGEBRANCH_NAME = #{managebranchName}
+            </if>
+            <if test="mbCode != null">
+                and MB_CODE = #{mbCode}
+            </if>
+            <if test="mbId != null">
+                and MB_ID = #{mbId}
+            </if>
+            <if test="mbName != null">
+                and MB_NAME = #{mbName}
+            </if>
+            <if test="md5 != null">
+                and MD5 = #{md5}
+            </if>
+            <if test="modeCode != null">
+                and MODE_CODE = #{modeCode}
+            </if>
+            <if test="modeId != null">
+                and MODE_ID = #{modeId}
+            </if>
+            <if test="modeName != null">
+                and MODE_NAME = #{modeName}
+            </if>
+            <if test="opuserCode != null">
+                and OPUSER_CODE = #{opuserCode}
+            </if>
+            <if test="opuserId != null">
+                and OPUSER_ID = #{opuserId}
+            </if>
+            <if test="opuserName != null">
+                and OPUSER_NAME = #{opuserName}
+            </if>
+            <if test="payaccountName != null">
+                and PAYACCOUNT_NAME = #{payaccountName}
+            </if>
+            <if test="payaccountbank != null">
+                and PAYACCOUNTBANK = #{payaccountbank}
+            </if>
+            <if test="payaccountno != null">
+                and PAYACCOUNTNO = #{payaccountno}
+            </if>
+            <if test="paykindCode != null">
+                and PAYKIND_CODE = #{paykindCode}
+            </if>
+            <if test="paykindId != null">
+                and PAYKIND_ID = #{paykindId}
+            </if>
+            <if test="paykindName != null">
+                and PAYKIND_NAME = #{paykindName}
+            </if>
+            <if test="paytypeCode != null">
+                and PAYTYPE_CODE = #{paytypeCode}
+            </if>
+            <if test="paytypeId != null">
+                and PAYTYPE_ID = #{paytypeId}
+            </if>
+            <if test="paytypeName != null">
+                and PAYTYPE_NAME = #{paytypeName}
+            </if>
+            <if test="pbCode != null">
+                and PB_CODE = #{pbCode}
+            </if>
+            <if test="pbId != null">
+                and PB_ID = #{pbId}
+            </if>
+            <if test="pbName != null">
+                and PB_NAME = #{pbName}
+            </if>
+            <if test="pfCode != null">
+                and PF_CODE = #{pfCode}
+            </if>
+            <if test="pfId != null">
+                and PF_ID = #{pfId}
+            </if>
+            <if test="pfName != null">
+                and PF_NAME = #{pfName}
+            </if>
+            <if test="provCode != null">
+                and PROV_CODE = #{provCode}
+            </if>
+            <if test="provId != null">
+                and PROV_ID = #{provId}
+            </if>
+            <if test="provName != null">
+                and PROV_NAME = #{provName}
+            </if>
+            <if test="setmodeCode != null">
+                and SETMODE_CODE = #{setmodeCode}
+            </if>
+            <if test="setmodeId != null">
+                and SETMODE_ID = #{setmodeId}
+            </if>
+            <if test="setmodeName != null">
+                and SETMODE_NAME = #{setmodeName}
+            </if>
+            <if test="smCode != null">
+                and SM_CODE = #{smCode}
+            </if>
+            <if test="smId != null">
+                and SM_ID = #{smId}
+            </if>
+            <if test="smName != null">
+                and SM_NAME = #{smName}
+            </if>
+            <if test="stCode != null">
+                and ST_CODE = #{stCode}
+            </if>
+            <if test="stId != null">
+                and ST_ID = #{stId}
+            </if>
+            <if test="stName != null">
+                and ST_NAME = #{stName}
+            </if>
+            <if test="useenCode != null">
+                and USEEN_CODE = #{useenCode}
+            </if>
+            <if test="useenId != null">
+                and USEEN_ID = #{useenId}
+            </if>
+            <if test="useenName != null">
+                and USEEN_NAME = #{useenName}
+            </if>
+            <if test="waCode != null">
+                and WA_CODE = #{waCode}
+            </if>
+            <if test="waId != null">
+                and WA_ID = #{waId}
+            </if>
+            <if test="waName != null">
+                and WA_NAME = #{waName}
+            </if>
+            <if test="year != null">
+                and YEAR = #{year}
+            </if>
+            <if test="zfcgbsCode != null">
+                and ZFCGBS_CODE = #{zfcgbsCode}
+            </if>
+            <if test="zfcgbsId != null">
+                and ZFCGBS_ID = #{zfcgbsId}
+            </if>
+            <if test="zfcgbsName != null">
+                and ZFCGBS_NAME = #{zfcgbsName}
+            </if>
+            <if test="hold10code != null">
+                and HOLD10CODE = #{hold10code}
+            </if>
+            <if test="hold10id != null">
+                and HOLD10ID = #{hold10id}
+            </if>
+            <if test="hold10name != null">
+                and HOLD10NAME = #{hold10name}
+            </if>
+            <if test="hold1code != null">
+                and HOLD1CODE = #{hold1code}
+            </if>
+            <if test="hold1id != null">
+                and HOLD1ID = #{hold1id}
+            </if>
+            <if test="hold1name != null">
+                and HOLD1NAME = #{hold1name}
+            </if>
+            <if test="hold2code != null">
+                and HOLD2CODE = #{hold2code}
+            </if>
+            <if test="hold2id != null">
+                and HOLD2ID = #{hold2id}
+            </if>
+            <if test="hold2name != null">
+                and HOLD2NAME = #{hold2name}
+            </if>
+            <if test="hold3code != null">
+                and HOLD3CODE = #{hold3code}
+            </if>
+            <if test="hold3id != null">
+                and HOLD3ID = #{hold3id}
+            </if>
+            <if test="hold3name != null">
+                and HOLD3NAME = #{hold3name}
+            </if>
+            <if test="hold4code != null">
+                and HOLD4CODE = #{hold4code}
+            </if>
+            <if test="hold4id != null">
+                and HOLD4ID = #{hold4id}
+            </if>
+            <if test="hold4name != null">
+                and HOLD4NAME = #{hold4name}
+            </if>
+            <if test="hold5code != null">
+                and HOLD5CODE = #{hold5code}
+            </if>
+            <if test="hold5id != null">
+                and HOLD5ID = #{hold5id}
+            </if>
+            <if test="hold5name != null">
+                and HOLD5NAME = #{hold5name}
+            </if>
+            <if test="hold6code != null">
+                and HOLD6CODE = #{hold6code}
+            </if>
+            <if test="hold6id != null">
+                and HOLD6ID = #{hold6id}
+            </if>
+            <if test="hold6name != null">
+                and HOLD6NAME = #{hold6name}
+            </if>
+            <if test="hold7code != null">
+                and HOLD7CODE = #{hold7code}
+            </if>
+            <if test="hold7id != null">
+                and HOLD7ID = #{hold7id}
+            </if>
+            <if test="hold7name != null">
+                and HOLD7NAME = #{hold7name}
+            </if>
+            <if test="hold8code != null">
+                and HOLD8CODE = #{hold8code}
+            </if>
+            <if test="hold8id != null">
+                and HOLD8ID = #{hold8id}
+            </if>
+            <if test="hold8name != null">
+                and HOLD8NAME = #{hold8name}
+            </if>
+            <if test="hold9code != null">
+                and HOLD9CODE = #{hold9code}
+            </if>
+            <if test="hold9id != null">
+                and HOLD9ID = #{hold9id}
+            </if>
+            <if test="hold9name != null">
+                and HOLD9NAME = #{hold9name}
+            </if>
+            <if test="budgetgroupCode != null">
+                and BUDGETGROUP_CODE = #{budgetgroupCode}
+            </if>
+            <if test="budgetgroupId != null">
+                and BUDGETGROUP_ID = #{budgetgroupId}
+            </if>
+            <if test="budgetgroupName != null">
+                and BUDGETGROUP_NAME = #{budgetgroupName}
+            </if>
+            <if test="catalogueCode != null">
+                and CATALOGUE_CODE = #{catalogueCode}
+            </if>
+            <if test="catalogueId != null">
+                and CATALOGUE_ID = #{catalogueId}
+            </if>
+            <if test="catalogueName != null">
+                and CATALOGUE_NAME = #{catalogueName}
+            </if>
+            <if test="filesuperCode != null">
+                and FILESUPER_CODE = #{filesuperCode}
+            </if>
+            <if test="filesuperId != null">
+                and FILESUPER_ID = #{filesuperId}
+            </if>
+            <if test="filesuperName != null">
+                and FILESUPER_NAME = #{filesuperName}
+            </if>
+            <if test="projectsCode != null">
+                and PROJECTS_CODE = #{projectsCode}
+            </if>
+            <if test="projectsId != null">
+                and PROJECTS_ID = #{projectsId}
+            </if>
+            <if test="projectsName != null">
+                and PROJECTS_NAME = #{projectsName}
+            </if>
+            <if test="specialstaffCode != null">
+                and SPECIALSTAFF_CODE = #{specialstaffCode}
+            </if>
+            <if test="specialstaffId != null">
+                and SPECIALSTAFF_ID = #{specialstaffId}
+            </if>
+            <if test="specialstaffName != null">
+                and SPECIALSTAFF_NAME = #{specialstaffName}
+            </if>
+            <if test="puritemCode != null">
+                and PURITEM_CODE = #{puritemCode}
+            </if>
+            <if test="puritemId != null">
+                and PURITEM_ID = #{puritemId}
+            </if>
+            <if test="puritemName != null">
+                and PURITEM_NAME = #{puritemName}
+            </if>
+            <if test="supbgtdocnoCode != null">
+                and SUPBGTDOCNO_CODE = #{supbgtdocnoCode}
+            </if>
+            <if test="supbgtdocnoId != null">
+                and SUPBGTDOCNO_ID = #{supbgtdocnoId}
+            </if>
+            <if test="supbgtdocnoName != null">
+                and SUPBGTDOCNO_NAME = #{supbgtdocnoName}
+            </if>
+            <if test="accountTypeCode != null">
+                and ACCOUNT_TYPE_CODE = #{accountTypeCode}
+            </if>
+            <if test="accountTypeId != null">
+                and ACCOUNT_TYPE_ID = #{accountTypeId}
+            </if>
+            <if test="accountTypeName != null">
+                and ACCOUNT_TYPE_NAME = #{accountTypeName}
+            </if>
+            <if test="accountczTypeCode != null">
+                and ACCOUNTCZ_TYPE_CODE = #{accountczTypeCode}
+            </if>
+            <if test="accountczTypeId != null">
+                and ACCOUNTCZ_TYPE_ID = #{accountczTypeId}
+            </if>
+            <if test="accountczTypeName != null">
+                and ACCOUNTCZ_TYPE_NAME = #{accountczTypeName}
+            </if>
+            <if test="agentAccountCode != null">
+                and AGENT_ACCOUNT_CODE = #{agentAccountCode}
+            </if>
+            <if test="agentAccountId != null">
+                and AGENT_ACCOUNT_ID = #{agentAccountId}
+            </if>
+            <if test="agentAccountName != null">
+                and AGENT_ACCOUNT_NAME = #{agentAccountName}
+            </if>
+            <if test="paySummaryCode != null">
+                and PAY_SUMMARY_CODE = #{paySummaryCode}
+            </if>
+            <if test="paySummaryId != null">
+                and PAY_SUMMARY_ID = #{paySummaryId}
+            </if>
+            <if test="paySummaryName != null">
+                and PAY_SUMMARY_NAME = #{paySummaryName}
+            </if>
+            <if test="tbCode != null">
+                and TB_CODE = #{tbCode}
+            </if>
+            <if test="tbId != null">
+                and TB_ID = #{tbId}
+            </if>
+            <if test="tbName != null">
+                and TB_NAME = #{tbName}
+            </if>
+            <if test="ifaccCode != null">
+                and IFACC_CODE = #{ifaccCode}
+            </if>
+            <if test="ifaccId != null">
+                and IFACC_ID = #{ifaccId}
+            </if>
+            <if test="ifaccName != null">
+                and IFACC_NAME = #{ifaccName}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into DFDEVDF0114.FGL_CCIDS(CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ADM_DIV_CODE, AE_CODE, AE_ID, AE_NAME, AGENCY_CODE, AGENCY_ID, AGENCY_NAME, AGENCYEXP_CODE, AGENCYEXP_ID, AGENCYEXP_NAME, AS_CODE, AS_ID, AS_NAME, BAC_CODE, BAC_ID, BAC_NAME, BAI_CODE, BAI_ID, BAI_NAME, BAP_CODE, BAP_ID, BAP_NAME, BC_CODE, BC_ID, BC_NAME, BGTDIR_CODE, BGTDIR_ID, BGTDIR_NAME, BGTSOURCE_CODE, BGTSOURCE_ID, BGTSOURCE_NAME, BGTTYPE_CODE, BGTTYPE_ID, BGTTYPE_NAME, BIS_CODE, BIS_ID, BIS_NAME, BP_CODE, BP_ID, BP_NAME, BSO_CODE, BSO_ID, BSO_NAME, BUDGETVOU_CODE, BUDGETVOU_ID, BUDGETVOU_NAME, CB_CODE, CB_ID, CB_NAME, CCID, CLEARACCOUNT_NAME, CLEARACCOUNTBANK, CLEARACCOUNTNO, COA_ID, CT_CODE, CT_ID, CT_NAME, DIR_CODE, DIR_ID, DIR_NAME, EDITOR_CODE, EDITOR_ID, EDITOR_NAME, EXPECO_CODE, EXPECO_ID, EXPECO_NAME, EXPFUNC_CODE, EXPFUNC_ID, EXPFUNC_NAME, FASN_CODE, FASN_ID, FASN_NAME, FF_CODE, FF_ID, FF_NAME, FILE_CODE, FILE_ID, FILE_NAME, FM_CODE, FM_ID, FM_NAME, FUNDTYPE_CODE, FUNDTYPE_ID, FUNDTYPE_NAME, GOVEXPECO_CODE, GOVEXPECO_ID, GOVEXPECO_NAME, GP_AGENCY_CODE, GP_AGENCY_ID, GP_AGENCY_NAME, GPBARN_CODE, GPBARN_ID, GPBARN_NAME, GPPLAN_CODE, GPPLAN_ID, GPPLAN_NAME, GPVOU_CODE, GPVOU_ID, GPVOU_NAME, GROUP_ID_CODE, GROUP_ID_ID, GROUP_ID_NAME, GZBS_CODE, GZBS_ID, GZBS_NAME, IB_CODE, IB_ID, IB_NAME, IEN_CODE, IEN_ID, IEN_NAME, IN_BIS_CODE, IN_BIS_ID, IN_BIS_NAME, IN_BS_CODE, IN_BS_ID, IN_BS_NAME, INCOMEACCOUNT_NAME, INCOMEACCOUNTBANK, INCOMEACCOUNTNO, INPM_CODE, INPM_ID, INPM_NAME, MANAGEBRANCH_CODE, MANAGEBRANCH_ID, MANAGEBRANCH_NAME, MB_CODE, MB_ID, MB_NAME, MD5, MODE_CODE, MODE_ID, MODE_NAME, OPUSER_CODE, OPUSER_ID, OPUSER_NAME, PAYACCOUNT_NAME, PAYACCOUNTBANK, PAYACCOUNTNO, PAYKIND_CODE, PAYKIND_ID, PAYKIND_NAME, PAYTYPE_CODE, PAYTYPE_ID, PAYTYPE_NAME, PB_CODE, PB_ID, PB_NAME, PF_CODE, PF_ID, PF_NAME, PROV_CODE, PROV_ID, PROV_NAME, SETMODE_CODE, SETMODE_ID, SETMODE_NAME, SM_CODE, SM_ID, SM_NAME, ST_CODE, ST_ID, ST_NAME, USEEN_CODE, USEEN_ID, USEEN_NAME, WA_CODE, WA_ID, WA_NAME, YEAR, ZFCGBS_CODE, ZFCGBS_ID, ZFCGBS_NAME, HOLD10CODE, HOLD10ID, HOLD10NAME, HOLD1CODE, HOLD1ID, HOLD1NAME, HOLD2CODE, HOLD2ID, HOLD2NAME, HOLD3CODE, HOLD3ID, HOLD3NAME, HOLD4CODE, HOLD4ID, HOLD4NAME, HOLD5CODE, HOLD5ID, HOLD5NAME, HOLD6CODE, HOLD6ID, HOLD6NAME, HOLD7CODE, HOLD7ID, HOLD7NAME, HOLD8CODE, HOLD8ID, HOLD8NAME, HOLD9CODE, HOLD9ID, HOLD9NAME, BUDGETGROUP_CODE, BUDGETGROUP_ID, BUDGETGROUP_NAME, CATALOGUE_CODE, CATALOGUE_ID, CATALOGUE_NAME, FILESUPER_CODE, FILESUPER_ID, FILESUPER_NAME, PROJECTS_CODE, PROJECTS_ID, PROJECTS_NAME, SPECIALSTAFF_CODE, SPECIALSTAFF_ID, SPECIALSTAFF_NAME, PURITEM_CODE, PURITEM_ID, PURITEM_NAME, SUPBGTDOCNO_CODE, SUPBGTDOCNO_ID, SUPBGTDOCNO_NAME, ACCOUNT_TYPE_CODE, ACCOUNT_TYPE_ID, ACCOUNT_TYPE_NAME, ACCOUNTCZ_TYPE_CODE, ACCOUNTCZ_TYPE_ID, ACCOUNTCZ_TYPE_NAME, AGENT_ACCOUNT_CODE, AGENT_ACCOUNT_ID, AGENT_ACCOUNT_NAME, PAY_SUMMARY_CODE, PAY_SUMMARY_ID, PAY_SUMMARY_NAME, TB_CODE, TB_ID, TB_NAME, IFACC_CODE, IFACC_ID, IFACC_NAME)
+        values (#{createBy}, #{createDate}, #{lastModifiedBy}, #{lastModifiedDate}, #{lastModifiedVersion}, #{admDivCode}, #{aeCode}, #{aeId}, #{aeName}, #{agencyCode}, #{agencyId}, #{agencyName}, #{agencyexpCode}, #{agencyexpId}, #{agencyexpName}, #{asCode}, #{asId}, #{asName}, #{bacCode}, #{bacId}, #{bacName}, #{baiCode}, #{baiId}, #{baiName}, #{bapCode}, #{bapId}, #{bapName}, #{bcCode}, #{bcId}, #{bcName}, #{bgtdirCode}, #{bgtdirId}, #{bgtdirName}, #{bgtsourceCode}, #{bgtsourceId}, #{bgtsourceName}, #{bgttypeCode}, #{bgttypeId}, #{bgttypeName}, #{bisCode}, #{bisId}, #{bisName}, #{bpCode}, #{bpId}, #{bpName}, #{bsoCode}, #{bsoId}, #{bsoName}, #{budgetvouCode}, #{budgetvouId}, #{budgetvouName}, #{cbCode}, #{cbId}, #{cbName}, #{ccid}, #{clearaccountName}, #{clearaccountbank}, #{clearaccountno}, #{coaId}, #{ctCode}, #{ctId}, #{ctName}, #{dirCode}, #{dirId}, #{dirName}, #{editorCode}, #{editorId}, #{editorName}, #{expecoCode}, #{expecoId}, #{expecoName}, #{expfuncCode}, #{expfuncId}, #{expfuncName}, #{fasnCode}, #{fasnId}, #{fasnName}, #{ffCode}, #{ffId}, #{ffName}, #{fileCode}, #{fileId}, #{fileName}, #{fmCode}, #{fmId}, #{fmName}, #{fundtypeCode}, #{fundtypeId}, #{fundtypeName}, #{govexpecoCode}, #{govexpecoId}, #{govexpecoName}, #{gpAgencyCode}, #{gpAgencyId}, #{gpAgencyName}, #{gpbarnCode}, #{gpbarnId}, #{gpbarnName}, #{gpplanCode}, #{gpplanId}, #{gpplanName}, #{gpvouCode}, #{gpvouId}, #{gpvouName}, #{groupIdCode}, #{groupIdId}, #{groupIdName}, #{gzbsCode}, #{gzbsId}, #{gzbsName}, #{ibCode}, #{ibId}, #{ibName}, #{ienCode}, #{ienId}, #{ienName}, #{inBisCode}, #{inBisId}, #{inBisName}, #{inBsCode}, #{inBsId}, #{inBsName}, #{incomeaccountName}, #{incomeaccountbank}, #{incomeaccountno}, #{inpmCode}, #{inpmId}, #{inpmName}, #{managebranchCode}, #{managebranchId}, #{managebranchName}, #{mbCode}, #{mbId}, #{mbName}, #{md5}, #{modeCode}, #{modeId}, #{modeName}, #{opuserCode}, #{opuserId}, #{opuserName}, #{payaccountName}, #{payaccountbank}, #{payaccountno}, #{paykindCode}, #{paykindId}, #{paykindName}, #{paytypeCode}, #{paytypeId}, #{paytypeName}, #{pbCode}, #{pbId}, #{pbName}, #{pfCode}, #{pfId}, #{pfName}, #{provCode}, #{provId}, #{provName}, #{setmodeCode}, #{setmodeId}, #{setmodeName}, #{smCode}, #{smId}, #{smName}, #{stCode}, #{stId}, #{stName}, #{useenCode}, #{useenId}, #{useenName}, #{waCode}, #{waId}, #{waName}, #{year}, #{zfcgbsCode}, #{zfcgbsId}, #{zfcgbsName}, #{hold10code}, #{hold10id}, #{hold10name}, #{hold1code}, #{hold1id}, #{hold1name}, #{hold2code}, #{hold2id}, #{hold2name}, #{hold3code}, #{hold3id}, #{hold3name}, #{hold4code}, #{hold4id}, #{hold4name}, #{hold5code}, #{hold5id}, #{hold5name}, #{hold6code}, #{hold6id}, #{hold6name}, #{hold7code}, #{hold7id}, #{hold7name}, #{hold8code}, #{hold8id}, #{hold8name}, #{hold9code}, #{hold9id}, #{hold9name}, #{budgetgroupCode}, #{budgetgroupId}, #{budgetgroupName}, #{catalogueCode}, #{catalogueId}, #{catalogueName}, #{filesuperCode}, #{filesuperId}, #{filesuperName}, #{projectsCode}, #{projectsId}, #{projectsName}, #{specialstaffCode}, #{specialstaffId}, #{specialstaffName}, #{puritemCode}, #{puritemId}, #{puritemName}, #{supbgtdocnoCode}, #{supbgtdocnoId}, #{supbgtdocnoName}, #{accountTypeCode}, #{accountTypeId}, #{accountTypeName}, #{accountczTypeCode}, #{accountczTypeId}, #{accountczTypeName}, #{agentAccountCode}, #{agentAccountId}, #{agentAccountName}, #{paySummaryCode}, #{paySummaryId}, #{paySummaryName}, #{tbCode}, #{tbId}, #{tbName}, #{ifaccCode}, #{ifaccId}, #{ifaccName})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update DFDEVDF0114.FGL_CCIDS
+        <set>
+            <if test="createBy != null">
+                CREATE_BY = #{createBy},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate},
+            </if>
+            <if test="lastModifiedBy != null">
+                LAST_MODIFIED_BY = #{lastModifiedBy},
+            </if>
+            <if test="lastModifiedDate != null">
+                LAST_MODIFIED_DATE = #{lastModifiedDate},
+            </if>
+            <if test="lastModifiedVersion != null">
+                LAST_MODIFIED_VERSION = #{lastModifiedVersion},
+            </if>
+            <if test="admDivCode != null">
+                ADM_DIV_CODE = #{admDivCode},
+            </if>
+            <if test="aeCode != null">
+                AE_CODE = #{aeCode},
+            </if>
+            <if test="aeId != null">
+                AE_ID = #{aeId},
+            </if>
+            <if test="aeName != null">
+                AE_NAME = #{aeName},
+            </if>
+            <if test="agencyCode != null">
+                AGENCY_CODE = #{agencyCode},
+            </if>
+            <if test="agencyId != null">
+                AGENCY_ID = #{agencyId},
+            </if>
+            <if test="agencyName != null">
+                AGENCY_NAME = #{agencyName},
+            </if>
+            <if test="agencyexpCode != null">
+                AGENCYEXP_CODE = #{agencyexpCode},
+            </if>
+            <if test="agencyexpId != null">
+                AGENCYEXP_ID = #{agencyexpId},
+            </if>
+            <if test="agencyexpName != null">
+                AGENCYEXP_NAME = #{agencyexpName},
+            </if>
+            <if test="asCode != null">
+                AS_CODE = #{asCode},
+            </if>
+            <if test="asId != null">
+                AS_ID = #{asId},
+            </if>
+            <if test="asName != null">
+                AS_NAME = #{asName},
+            </if>
+            <if test="bacCode != null">
+                BAC_CODE = #{bacCode},
+            </if>
+            <if test="bacId != null">
+                BAC_ID = #{bacId},
+            </if>
+            <if test="bacName != null">
+                BAC_NAME = #{bacName},
+            </if>
+            <if test="baiCode != null">
+                BAI_CODE = #{baiCode},
+            </if>
+            <if test="baiId != null">
+                BAI_ID = #{baiId},
+            </if>
+            <if test="baiName != null">
+                BAI_NAME = #{baiName},
+            </if>
+            <if test="bapCode != null">
+                BAP_CODE = #{bapCode},
+            </if>
+            <if test="bapId != null">
+                BAP_ID = #{bapId},
+            </if>
+            <if test="bapName != null">
+                BAP_NAME = #{bapName},
+            </if>
+            <if test="bcCode != null">
+                BC_CODE = #{bcCode},
+            </if>
+            <if test="bcId != null">
+                BC_ID = #{bcId},
+            </if>
+            <if test="bcName != null">
+                BC_NAME = #{bcName},
+            </if>
+            <if test="bgtdirCode != null">
+                BGTDIR_CODE = #{bgtdirCode},
+            </if>
+            <if test="bgtdirId != null">
+                BGTDIR_ID = #{bgtdirId},
+            </if>
+            <if test="bgtdirName != null">
+                BGTDIR_NAME = #{bgtdirName},
+            </if>
+            <if test="bgtsourceCode != null">
+                BGTSOURCE_CODE = #{bgtsourceCode},
+            </if>
+            <if test="bgtsourceId != null">
+                BGTSOURCE_ID = #{bgtsourceId},
+            </if>
+            <if test="bgtsourceName != null">
+                BGTSOURCE_NAME = #{bgtsourceName},
+            </if>
+            <if test="bgttypeCode != null">
+                BGTTYPE_CODE = #{bgttypeCode},
+            </if>
+            <if test="bgttypeId != null">
+                BGTTYPE_ID = #{bgttypeId},
+            </if>
+            <if test="bgttypeName != null">
+                BGTTYPE_NAME = #{bgttypeName},
+            </if>
+            <if test="bisCode != null">
+                BIS_CODE = #{bisCode},
+            </if>
+            <if test="bisId != null">
+                BIS_ID = #{bisId},
+            </if>
+            <if test="bisName != null">
+                BIS_NAME = #{bisName},
+            </if>
+            <if test="bpCode != null">
+                BP_CODE = #{bpCode},
+            </if>
+            <if test="bpId != null">
+                BP_ID = #{bpId},
+            </if>
+            <if test="bpName != null">
+                BP_NAME = #{bpName},
+            </if>
+            <if test="bsoCode != null">
+                BSO_CODE = #{bsoCode},
+            </if>
+            <if test="bsoId != null">
+                BSO_ID = #{bsoId},
+            </if>
+            <if test="bsoName != null">
+                BSO_NAME = #{bsoName},
+            </if>
+            <if test="budgetvouCode != null">
+                BUDGETVOU_CODE = #{budgetvouCode},
+            </if>
+            <if test="budgetvouId != null">
+                BUDGETVOU_ID = #{budgetvouId},
+            </if>
+            <if test="budgetvouName != null">
+                BUDGETVOU_NAME = #{budgetvouName},
+            </if>
+            <if test="cbCode != null">
+                CB_CODE = #{cbCode},
+            </if>
+            <if test="cbId != null">
+                CB_ID = #{cbId},
+            </if>
+            <if test="cbName != null">
+                CB_NAME = #{cbName},
+            </if>
+            <if test="ccid != null">
+                CCID = #{ccid},
+            </if>
+            <if test="clearaccountName != null">
+                CLEARACCOUNT_NAME = #{clearaccountName},
+            </if>
+            <if test="clearaccountbank != null">
+                CLEARACCOUNTBANK = #{clearaccountbank},
+            </if>
+            <if test="clearaccountno != null">
+                CLEARACCOUNTNO = #{clearaccountno},
+            </if>
+            <if test="coaId != null">
+                COA_ID = #{coaId},
+            </if>
+            <if test="ctCode != null">
+                CT_CODE = #{ctCode},
+            </if>
+            <if test="ctId != null">
+                CT_ID = #{ctId},
+            </if>
+            <if test="ctName != null">
+                CT_NAME = #{ctName},
+            </if>
+            <if test="dirCode != null">
+                DIR_CODE = #{dirCode},
+            </if>
+            <if test="dirId != null">
+                DIR_ID = #{dirId},
+            </if>
+            <if test="dirName != null">
+                DIR_NAME = #{dirName},
+            </if>
+            <if test="editorCode != null">
+                EDITOR_CODE = #{editorCode},
+            </if>
+            <if test="editorId != null">
+                EDITOR_ID = #{editorId},
+            </if>
+            <if test="editorName != null">
+                EDITOR_NAME = #{editorName},
+            </if>
+            <if test="expecoCode != null">
+                EXPECO_CODE = #{expecoCode},
+            </if>
+            <if test="expecoId != null">
+                EXPECO_ID = #{expecoId},
+            </if>
+            <if test="expecoName != null">
+                EXPECO_NAME = #{expecoName},
+            </if>
+            <if test="expfuncCode != null">
+                EXPFUNC_CODE = #{expfuncCode},
+            </if>
+            <if test="expfuncId != null">
+                EXPFUNC_ID = #{expfuncId},
+            </if>
+            <if test="expfuncName != null">
+                EXPFUNC_NAME = #{expfuncName},
+            </if>
+            <if test="fasnCode != null">
+                FASN_CODE = #{fasnCode},
+            </if>
+            <if test="fasnId != null">
+                FASN_ID = #{fasnId},
+            </if>
+            <if test="fasnName != null">
+                FASN_NAME = #{fasnName},
+            </if>
+            <if test="ffCode != null">
+                FF_CODE = #{ffCode},
+            </if>
+            <if test="ffId != null">
+                FF_ID = #{ffId},
+            </if>
+            <if test="ffName != null">
+                FF_NAME = #{ffName},
+            </if>
+            <if test="fileCode != null">
+                FILE_CODE = #{fileCode},
+            </if>
+            <if test="fileId != null">
+                FILE_ID = #{fileId},
+            </if>
+            <if test="fileName != null">
+                FILE_NAME = #{fileName},
+            </if>
+            <if test="fmCode != null">
+                FM_CODE = #{fmCode},
+            </if>
+            <if test="fmId != null">
+                FM_ID = #{fmId},
+            </if>
+            <if test="fmName != null">
+                FM_NAME = #{fmName},
+            </if>
+            <if test="fundtypeCode != null">
+                FUNDTYPE_CODE = #{fundtypeCode},
+            </if>
+            <if test="fundtypeId != null">
+                FUNDTYPE_ID = #{fundtypeId},
+            </if>
+            <if test="fundtypeName != null">
+                FUNDTYPE_NAME = #{fundtypeName},
+            </if>
+            <if test="govexpecoCode != null">
+                GOVEXPECO_CODE = #{govexpecoCode},
+            </if>
+            <if test="govexpecoId != null">
+                GOVEXPECO_ID = #{govexpecoId},
+            </if>
+            <if test="govexpecoName != null">
+                GOVEXPECO_NAME = #{govexpecoName},
+            </if>
+            <if test="gpAgencyCode != null">
+                GP_AGENCY_CODE = #{gpAgencyCode},
+            </if>
+            <if test="gpAgencyId != null">
+                GP_AGENCY_ID = #{gpAgencyId},
+            </if>
+            <if test="gpAgencyName != null">
+                GP_AGENCY_NAME = #{gpAgencyName},
+            </if>
+            <if test="gpbarnCode != null">
+                GPBARN_CODE = #{gpbarnCode},
+            </if>
+            <if test="gpbarnId != null">
+                GPBARN_ID = #{gpbarnId},
+            </if>
+            <if test="gpbarnName != null">
+                GPBARN_NAME = #{gpbarnName},
+            </if>
+            <if test="gpplanCode != null">
+                GPPLAN_CODE = #{gpplanCode},
+            </if>
+            <if test="gpplanId != null">
+                GPPLAN_ID = #{gpplanId},
+            </if>
+            <if test="gpplanName != null">
+                GPPLAN_NAME = #{gpplanName},
+            </if>
+            <if test="gpvouCode != null">
+                GPVOU_CODE = #{gpvouCode},
+            </if>
+            <if test="gpvouId != null">
+                GPVOU_ID = #{gpvouId},
+            </if>
+            <if test="gpvouName != null">
+                GPVOU_NAME = #{gpvouName},
+            </if>
+            <if test="groupIdCode != null">
+                GROUP_ID_CODE = #{groupIdCode},
+            </if>
+            <if test="groupIdId != null">
+                GROUP_ID_ID = #{groupIdId},
+            </if>
+            <if test="groupIdName != null">
+                GROUP_ID_NAME = #{groupIdName},
+            </if>
+            <if test="gzbsCode != null">
+                GZBS_CODE = #{gzbsCode},
+            </if>
+            <if test="gzbsId != null">
+                GZBS_ID = #{gzbsId},
+            </if>
+            <if test="gzbsName != null">
+                GZBS_NAME = #{gzbsName},
+            </if>
+            <if test="ibCode != null">
+                IB_CODE = #{ibCode},
+            </if>
+            <if test="ibId != null">
+                IB_ID = #{ibId},
+            </if>
+            <if test="ibName != null">
+                IB_NAME = #{ibName},
+            </if>
+            <if test="ienCode != null">
+                IEN_CODE = #{ienCode},
+            </if>
+            <if test="ienId != null">
+                IEN_ID = #{ienId},
+            </if>
+            <if test="ienName != null">
+                IEN_NAME = #{ienName},
+            </if>
+            <if test="inBisCode != null">
+                IN_BIS_CODE = #{inBisCode},
+            </if>
+            <if test="inBisId != null">
+                IN_BIS_ID = #{inBisId},
+            </if>
+            <if test="inBisName != null">
+                IN_BIS_NAME = #{inBisName},
+            </if>
+            <if test="inBsCode != null">
+                IN_BS_CODE = #{inBsCode},
+            </if>
+            <if test="inBsId != null">
+                IN_BS_ID = #{inBsId},
+            </if>
+            <if test="inBsName != null">
+                IN_BS_NAME = #{inBsName},
+            </if>
+            <if test="incomeaccountName != null">
+                INCOMEACCOUNT_NAME = #{incomeaccountName},
+            </if>
+            <if test="incomeaccountbank != null">
+                INCOMEACCOUNTBANK = #{incomeaccountbank},
+            </if>
+            <if test="incomeaccountno != null">
+                INCOMEACCOUNTNO = #{incomeaccountno},
+            </if>
+            <if test="inpmCode != null">
+                INPM_CODE = #{inpmCode},
+            </if>
+            <if test="inpmId != null">
+                INPM_ID = #{inpmId},
+            </if>
+            <if test="inpmName != null">
+                INPM_NAME = #{inpmName},
+            </if>
+            <if test="managebranchCode != null">
+                MANAGEBRANCH_CODE = #{managebranchCode},
+            </if>
+            <if test="managebranchId != null">
+                MANAGEBRANCH_ID = #{managebranchId},
+            </if>
+            <if test="managebranchName != null">
+                MANAGEBRANCH_NAME = #{managebranchName},
+            </if>
+            <if test="mbCode != null">
+                MB_CODE = #{mbCode},
+            </if>
+            <if test="mbId != null">
+                MB_ID = #{mbId},
+            </if>
+            <if test="mbName != null">
+                MB_NAME = #{mbName},
+            </if>
+            <if test="md5 != null">
+                MD5 = #{md5},
+            </if>
+            <if test="modeCode != null">
+                MODE_CODE = #{modeCode},
+            </if>
+            <if test="modeId != null">
+                MODE_ID = #{modeId},
+            </if>
+            <if test="modeName != null">
+                MODE_NAME = #{modeName},
+            </if>
+            <if test="opuserCode != null">
+                OPUSER_CODE = #{opuserCode},
+            </if>
+            <if test="opuserId != null">
+                OPUSER_ID = #{opuserId},
+            </if>
+            <if test="opuserName != null">
+                OPUSER_NAME = #{opuserName},
+            </if>
+            <if test="payaccountName != null">
+                PAYACCOUNT_NAME = #{payaccountName},
+            </if>
+            <if test="payaccountbank != null">
+                PAYACCOUNTBANK = #{payaccountbank},
+            </if>
+            <if test="payaccountno != null">
+                PAYACCOUNTNO = #{payaccountno},
+            </if>
+            <if test="paykindCode != null">
+                PAYKIND_CODE = #{paykindCode},
+            </if>
+            <if test="paykindId != null">
+                PAYKIND_ID = #{paykindId},
+            </if>
+            <if test="paykindName != null">
+                PAYKIND_NAME = #{paykindName},
+            </if>
+            <if test="paytypeCode != null">
+                PAYTYPE_CODE = #{paytypeCode},
+            </if>
+            <if test="paytypeId != null">
+                PAYTYPE_ID = #{paytypeId},
+            </if>
+            <if test="paytypeName != null">
+                PAYTYPE_NAME = #{paytypeName},
+            </if>
+            <if test="pbCode != null">
+                PB_CODE = #{pbCode},
+            </if>
+            <if test="pbId != null">
+                PB_ID = #{pbId},
+            </if>
+            <if test="pbName != null">
+                PB_NAME = #{pbName},
+            </if>
+            <if test="pfCode != null">
+                PF_CODE = #{pfCode},
+            </if>
+            <if test="pfId != null">
+                PF_ID = #{pfId},
+            </if>
+            <if test="pfName != null">
+                PF_NAME = #{pfName},
+            </if>
+            <if test="provCode != null">
+                PROV_CODE = #{provCode},
+            </if>
+            <if test="provId != null">
+                PROV_ID = #{provId},
+            </if>
+            <if test="provName != null">
+                PROV_NAME = #{provName},
+            </if>
+            <if test="setmodeCode != null">
+                SETMODE_CODE = #{setmodeCode},
+            </if>
+            <if test="setmodeId != null">
+                SETMODE_ID = #{setmodeId},
+            </if>
+            <if test="setmodeName != null">
+                SETMODE_NAME = #{setmodeName},
+            </if>
+            <if test="smCode != null">
+                SM_CODE = #{smCode},
+            </if>
+            <if test="smId != null">
+                SM_ID = #{smId},
+            </if>
+            <if test="smName != null">
+                SM_NAME = #{smName},
+            </if>
+            <if test="stCode != null">
+                ST_CODE = #{stCode},
+            </if>
+            <if test="stId != null">
+                ST_ID = #{stId},
+            </if>
+            <if test="stName != null">
+                ST_NAME = #{stName},
+            </if>
+            <if test="useenCode != null">
+                USEEN_CODE = #{useenCode},
+            </if>
+            <if test="useenId != null">
+                USEEN_ID = #{useenId},
+            </if>
+            <if test="useenName != null">
+                USEEN_NAME = #{useenName},
+            </if>
+            <if test="waCode != null">
+                WA_CODE = #{waCode},
+            </if>
+            <if test="waId != null">
+                WA_ID = #{waId},
+            </if>
+            <if test="waName != null">
+                WA_NAME = #{waName},
+            </if>
+            <if test="year != null">
+                YEAR = #{year},
+            </if>
+            <if test="zfcgbsCode != null">
+                ZFCGBS_CODE = #{zfcgbsCode},
+            </if>
+            <if test="zfcgbsId != null">
+                ZFCGBS_ID = #{zfcgbsId},
+            </if>
+            <if test="zfcgbsName != null">
+                ZFCGBS_NAME = #{zfcgbsName},
+            </if>
+            <if test="hold10code != null">
+                HOLD10CODE = #{hold10code},
+            </if>
+            <if test="hold10id != null">
+                HOLD10ID = #{hold10id},
+            </if>
+            <if test="hold10name != null">
+                HOLD10NAME = #{hold10name},
+            </if>
+            <if test="hold1code != null">
+                HOLD1CODE = #{hold1code},
+            </if>
+            <if test="hold1id != null">
+                HOLD1ID = #{hold1id},
+            </if>
+            <if test="hold1name != null">
+                HOLD1NAME = #{hold1name},
+            </if>
+            <if test="hold2code != null">
+                HOLD2CODE = #{hold2code},
+            </if>
+            <if test="hold2id != null">
+                HOLD2ID = #{hold2id},
+            </if>
+            <if test="hold2name != null">
+                HOLD2NAME = #{hold2name},
+            </if>
+            <if test="hold3code != null">
+                HOLD3CODE = #{hold3code},
+            </if>
+            <if test="hold3id != null">
+                HOLD3ID = #{hold3id},
+            </if>
+            <if test="hold3name != null">
+                HOLD3NAME = #{hold3name},
+            </if>
+            <if test="hold4code != null">
+                HOLD4CODE = #{hold4code},
+            </if>
+            <if test="hold4id != null">
+                HOLD4ID = #{hold4id},
+            </if>
+            <if test="hold4name != null">
+                HOLD4NAME = #{hold4name},
+            </if>
+            <if test="hold5code != null">
+                HOLD5CODE = #{hold5code},
+            </if>
+            <if test="hold5id != null">
+                HOLD5ID = #{hold5id},
+            </if>
+            <if test="hold5name != null">
+                HOLD5NAME = #{hold5name},
+            </if>
+            <if test="hold6code != null">
+                HOLD6CODE = #{hold6code},
+            </if>
+            <if test="hold6id != null">
+                HOLD6ID = #{hold6id},
+            </if>
+            <if test="hold6name != null">
+                HOLD6NAME = #{hold6name},
+            </if>
+            <if test="hold7code != null">
+                HOLD7CODE = #{hold7code},
+            </if>
+            <if test="hold7id != null">
+                HOLD7ID = #{hold7id},
+            </if>
+            <if test="hold7name != null">
+                HOLD7NAME = #{hold7name},
+            </if>
+            <if test="hold8code != null">
+                HOLD8CODE = #{hold8code},
+            </if>
+            <if test="hold8id != null">
+                HOLD8ID = #{hold8id},
+            </if>
+            <if test="hold8name != null">
+                HOLD8NAME = #{hold8name},
+            </if>
+            <if test="hold9code != null">
+                HOLD9CODE = #{hold9code},
+            </if>
+            <if test="hold9id != null">
+                HOLD9ID = #{hold9id},
+            </if>
+            <if test="hold9name != null">
+                HOLD9NAME = #{hold9name},
+            </if>
+            <if test="budgetgroupCode != null">
+                BUDGETGROUP_CODE = #{budgetgroupCode},
+            </if>
+            <if test="budgetgroupId != null">
+                BUDGETGROUP_ID = #{budgetgroupId},
+            </if>
+            <if test="budgetgroupName != null">
+                BUDGETGROUP_NAME = #{budgetgroupName},
+            </if>
+            <if test="catalogueCode != null">
+                CATALOGUE_CODE = #{catalogueCode},
+            </if>
+            <if test="catalogueId != null">
+                CATALOGUE_ID = #{catalogueId},
+            </if>
+            <if test="catalogueName != null">
+                CATALOGUE_NAME = #{catalogueName},
+            </if>
+            <if test="filesuperCode != null">
+                FILESUPER_CODE = #{filesuperCode},
+            </if>
+            <if test="filesuperId != null">
+                FILESUPER_ID = #{filesuperId},
+            </if>
+            <if test="filesuperName != null">
+                FILESUPER_NAME = #{filesuperName},
+            </if>
+            <if test="projectsCode != null">
+                PROJECTS_CODE = #{projectsCode},
+            </if>
+            <if test="projectsId != null">
+                PROJECTS_ID = #{projectsId},
+            </if>
+            <if test="projectsName != null">
+                PROJECTS_NAME = #{projectsName},
+            </if>
+            <if test="specialstaffCode != null">
+                SPECIALSTAFF_CODE = #{specialstaffCode},
+            </if>
+            <if test="specialstaffId != null">
+                SPECIALSTAFF_ID = #{specialstaffId},
+            </if>
+            <if test="specialstaffName != null">
+                SPECIALSTAFF_NAME = #{specialstaffName},
+            </if>
+            <if test="puritemCode != null">
+                PURITEM_CODE = #{puritemCode},
+            </if>
+            <if test="puritemId != null">
+                PURITEM_ID = #{puritemId},
+            </if>
+            <if test="puritemName != null">
+                PURITEM_NAME = #{puritemName},
+            </if>
+            <if test="supbgtdocnoCode != null">
+                SUPBGTDOCNO_CODE = #{supbgtdocnoCode},
+            </if>
+            <if test="supbgtdocnoId != null">
+                SUPBGTDOCNO_ID = #{supbgtdocnoId},
+            </if>
+            <if test="supbgtdocnoName != null">
+                SUPBGTDOCNO_NAME = #{supbgtdocnoName},
+            </if>
+            <if test="accountTypeCode != null">
+                ACCOUNT_TYPE_CODE = #{accountTypeCode},
+            </if>
+            <if test="accountTypeId != null">
+                ACCOUNT_TYPE_ID = #{accountTypeId},
+            </if>
+            <if test="accountTypeName != null">
+                ACCOUNT_TYPE_NAME = #{accountTypeName},
+            </if>
+            <if test="accountczTypeCode != null">
+                ACCOUNTCZ_TYPE_CODE = #{accountczTypeCode},
+            </if>
+            <if test="accountczTypeId != null">
+                ACCOUNTCZ_TYPE_ID = #{accountczTypeId},
+            </if>
+            <if test="accountczTypeName != null">
+                ACCOUNTCZ_TYPE_NAME = #{accountczTypeName},
+            </if>
+            <if test="agentAccountCode != null">
+                AGENT_ACCOUNT_CODE = #{agentAccountCode},
+            </if>
+            <if test="agentAccountId != null">
+                AGENT_ACCOUNT_ID = #{agentAccountId},
+            </if>
+            <if test="agentAccountName != null">
+                AGENT_ACCOUNT_NAME = #{agentAccountName},
+            </if>
+            <if test="paySummaryCode != null">
+                PAY_SUMMARY_CODE = #{paySummaryCode},
+            </if>
+            <if test="paySummaryId != null">
+                PAY_SUMMARY_ID = #{paySummaryId},
+            </if>
+            <if test="paySummaryName != null">
+                PAY_SUMMARY_NAME = #{paySummaryName},
+            </if>
+            <if test="tbCode != null">
+                TB_CODE = #{tbCode},
+            </if>
+            <if test="tbId != null">
+                TB_ID = #{tbId},
+            </if>
+            <if test="tbName != null">
+                TB_NAME = #{tbName},
+            </if>
+            <if test="ifaccCode != null">
+                IFACC_CODE = #{ifaccCode},
+            </if>
+            <if test="ifaccId != null">
+                IFACC_ID = #{ifaccId},
+            </if>
+            <if test="ifaccName != null">
+                IFACC_NAME = #{ifaccName},
+            </if>
+        </set>
+        where ID = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from DFDEVDF0114.FGL_CCIDS where ID = #{id}
+    </delete>
+
+</mapper>

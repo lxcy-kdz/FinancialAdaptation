@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yonyougov.mapper.BalanceMapper">
+
+    <resultMap type="com.yonyougov.entity.Balance" id="resultMap">
+        <result property="id" column="ID" jdbcType="OTHER"/>
+        <result property="createBy" column="CREATE_BY" jdbcType="OTHER"/>
+        <result property="createDate" column="CREATE_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedBy" column="LAST_MODIFIED_BY" jdbcType="OTHER"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedVersion" column="LAST_MODIFIED_VERSION" jdbcType="OTHER"/>
+        <result property="accountId" column="ACCOUNT_ID" jdbcType="OTHER"/>
+        <result property="adjustIncreaseMoney" column="ADJUST_INCREASE_MONEY" jdbcType="OTHER"/>
+        <result property="adjustIncreasingMoney" column="ADJUST_INCREASING_MONEY" jdbcType="OTHER"/>
+        <result property="adjustMinusMoney" column="ADJUST_MINUS_MONEY" jdbcType="OTHER"/>
+        <result property="adjustMinusingMoney" column="ADJUST_MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="admDivCode" column="ADM_DIV_CODE" jdbcType="OTHER"/>
+        <result property="aviMoney" column="AVI_MONEY" jdbcType="OTHER"/>
+        <result property="avingMoney" column="AVING_MONEY" jdbcType="OTHER"/>
+        <result property="balanceId" column="BALANCE_ID" jdbcType="OTHER"/>
+        <result property="canUseMoney" column="CAN_USE_MONEY" jdbcType="OTHER"/>
+        <result property="ccid" column="CCID" jdbcType="OTHER"/>
+        <result property="distributeFreezeMoney" column="DISTRIBUTE_FREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeFreezingMoney" column="DISTRIBUTE_FREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMinusEndMoney" column="DISTRIBUTE_MINUS_END_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMinusingMoney" column="DISTRIBUTE_MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMoney" column="DISTRIBUTE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeUnfreezeMoney" column="DISTRIBUTE_UNFREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeUnfreezingMoney" column="DISTRIBUTE_UNFREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="distributingMoney" column="DISTRIBUTING_MONEY" jdbcType="OTHER"/>
+        <result property="freezeMoney" column="FREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="freezingMoney" column="FREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="fromctrlid" column="FROMCTRLID" jdbcType="OTHER"/>
+        <result property="increaseMoney" column="INCREASE_MONEY" jdbcType="OTHER"/>
+        <result property="increasingMoney" column="INCREASING_MONEY" jdbcType="OTHER"/>
+        <result property="minusEndMoney" column="MINUS_END_MONEY" jdbcType="OTHER"/>
+        <result property="minusMoney" column="MINUS_MONEY" jdbcType="OTHER"/>
+        <result property="minusingMoney" column="MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="month" column="MONTH" jdbcType="OTHER"/>
+        <result property="recoverMoney" column="RECOVER_MONEY" jdbcType="OTHER"/>
+        <result property="recoveringMoney" column="RECOVERING_MONEY" jdbcType="OTHER"/>
+        <result property="remark" column="REMARK" jdbcType="OTHER"/>
+        <result property="secondFromctrlid" column="SECOND_FROMCTRLID" jdbcType="OTHER"/>
+        <result property="sumId" column="SUM_ID" jdbcType="OTHER"/>
+        <result property="unfreezeMoney" column="UNFREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="unfreezingMoney" column="UNFREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="useEndMoney" column="USE_END_MONEY" jdbcType="OTHER"/>
+        <result property="useMoney" column="USE_MONEY" jdbcType="OTHER"/>
+        <result property="usingMoney" column="USING_MONEY" jdbcType="OTHER"/>
+        <result property="verificationMoney" column="VERIFICATION_MONEY" jdbcType="OTHER"/>
+        <result property="verificationingMoney" column="VERIFICATIONING_MONEY" jdbcType="OTHER"/>
+        <result property="year" column="YEAR" jdbcType="OTHER"/>
+    </resultMap>
+
+    <resultMap type="com.yonyougov.entity.Balance" id="balanceCcidResultMap">
+        <result property="id" column="ID" jdbcType="OTHER"/>
+        <result property="createBy" column="CREATE_BY" jdbcType="OTHER"/>
+        <result property="createDate" column="CREATE_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedBy" column="LAST_MODIFIED_BY" jdbcType="OTHER"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE" jdbcType="OTHER"/>
+        <result property="lastModifiedVersion" column="LAST_MODIFIED_VERSION" jdbcType="OTHER"/>
+        <result property="accountId" column="ACCOUNT_ID" jdbcType="OTHER"/>
+        <result property="adjustIncreaseMoney" column="ADJUST_INCREASE_MONEY" jdbcType="OTHER"/>
+        <result property="adjustIncreasingMoney" column="ADJUST_INCREASING_MONEY" jdbcType="OTHER"/>
+        <result property="adjustMinusMoney" column="ADJUST_MINUS_MONEY" jdbcType="OTHER"/>
+        <result property="adjustMinusingMoney" column="ADJUST_MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="admDivCode" column="ADM_DIV_CODE" jdbcType="OTHER"/>
+        <result property="aviMoney" column="AVI_MONEY" jdbcType="OTHER"/>
+        <result property="avingMoney" column="AVING_MONEY" jdbcType="OTHER"/>
+        <result property="balanceId" column="BALANCE_ID" jdbcType="OTHER"/>
+        <result property="canUseMoney" column="CAN_USE_MONEY" jdbcType="OTHER"/>
+        <result property="ccid" column="CCID" jdbcType="OTHER"/>
+        <result property="distributeFreezeMoney" column="DISTRIBUTE_FREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeFreezingMoney" column="DISTRIBUTE_FREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMinusEndMoney" column="DISTRIBUTE_MINUS_END_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMinusingMoney" column="DISTRIBUTE_MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="distributeMoney" column="DISTRIBUTE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeUnfreezeMoney" column="DISTRIBUTE_UNFREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="distributeUnfreezingMoney" column="DISTRIBUTE_UNFREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="distributingMoney" column="DISTRIBUTING_MONEY" jdbcType="OTHER"/>
+        <result property="freezeMoney" column="FREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="freezingMoney" column="FREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="fromctrlid" column="FROMCTRLID" jdbcType="OTHER"/>
+        <result property="increaseMoney" column="INCREASE_MONEY" jdbcType="OTHER"/>
+        <result property="increasingMoney" column="INCREASING_MONEY" jdbcType="OTHER"/>
+        <result property="minusEndMoney" column="MINUS_END_MONEY" jdbcType="OTHER"/>
+        <result property="minusMoney" column="MINUS_MONEY" jdbcType="OTHER"/>
+        <result property="minusingMoney" column="MINUSING_MONEY" jdbcType="OTHER"/>
+        <result property="month" column="MONTH" jdbcType="OTHER"/>
+        <result property="recoverMoney" column="RECOVER_MONEY" jdbcType="OTHER"/>
+        <result property="recoveringMoney" column="RECOVERING_MONEY" jdbcType="OTHER"/>
+        <result property="remark" column="REMARK" jdbcType="OTHER"/>
+        <result property="secondFromctrlid" column="SECOND_FROMCTRLID" jdbcType="OTHER"/>
+        <result property="sumId" column="SUM_ID" jdbcType="OTHER"/>
+        <result property="unfreezeMoney" column="UNFREEZE_MONEY" jdbcType="OTHER"/>
+        <result property="unfreezingMoney" column="UNFREEZING_MONEY" jdbcType="OTHER"/>
+        <result property="useEndMoney" column="USE_END_MONEY" jdbcType="OTHER"/>
+        <result property="useMoney" column="USE_MONEY" jdbcType="OTHER"/>
+        <result property="usingMoney" column="USING_MONEY" jdbcType="OTHER"/>
+        <result property="verificationMoney" column="VERIFICATION_MONEY" jdbcType="OTHER"/>
+        <result property="verificationingMoney" column="VERIFICATIONING_MONEY" jdbcType="OTHER"/>
+        <result property="year" column="YEAR" jdbcType="OTHER"/>
+        <association property="ccids" javaType="com.yonyougov.entity.Ccids">
+            <result property="id" column="ccidId" jdbcType="OTHER"/>
+            <result property="createBy" column="CREATE_BY" jdbcType="OTHER"/>
+            <result property="createDate" column="CREATE_DATE" jdbcType="OTHER"/>
+            <result property="lastModifiedBy" column="LAST_MODIFIED_BY" jdbcType="OTHER"/>
+            <result property="lastModifiedDate" column="LAST_MODIFIED_DATE" jdbcType="OTHER"/>
+            <result property="lastModifiedVersion" column="LAST_MODIFIED_VERSION" jdbcType="OTHER"/>
+            <result property="admDivCode" column="ADM_DIV_CODE" jdbcType="OTHER"/>
+            <result property="aeCode" column="AE_CODE" jdbcType="OTHER"/>
+            <result property="aeId" column="AE_ID" jdbcType="OTHER"/>
+            <result property="aeName" column="AE_NAME" jdbcType="OTHER"/>
+            <result property="agencyCode" column="AGENCY_CODE" jdbcType="OTHER"/>
+            <result property="agencyId" column="AGENCY_ID" jdbcType="OTHER"/>
+            <result property="agencyName" column="AGENCY_NAME" jdbcType="OTHER"/>
+            <result property="agencyexpCode" column="AGENCYEXP_CODE" jdbcType="OTHER"/>
+            <result property="agencyexpId" column="AGENCYEXP_ID" jdbcType="OTHER"/>
+            <result property="agencyexpName" column="AGENCYEXP_NAME" jdbcType="OTHER"/>
+            <result property="asCode" column="AS_CODE" jdbcType="OTHER"/>
+            <result property="asId" column="AS_ID" jdbcType="OTHER"/>
+            <result property="asName" column="AS_NAME" jdbcType="OTHER"/>
+            <result property="bacCode" column="BAC_CODE" jdbcType="OTHER"/>
+            <result property="bacId" column="BAC_ID" jdbcType="OTHER"/>
+            <result property="bacName" column="BAC_NAME" jdbcType="OTHER"/>
+            <result property="baiCode" column="BAI_CODE" jdbcType="OTHER"/>
+            <result property="baiId" column="BAI_ID" jdbcType="OTHER"/>
+            <result property="baiName" column="BAI_NAME" jdbcType="OTHER"/>
+            <result property="bapCode" column="BAP_CODE" jdbcType="OTHER"/>
+            <result property="bapId" column="BAP_ID" jdbcType="OTHER"/>
+            <result property="bapName" column="BAP_NAME" jdbcType="OTHER"/>
+            <result property="bcCode" column="BC_CODE" jdbcType="OTHER"/>
+            <result property="bcId" column="BC_ID" jdbcType="OTHER"/>
+            <result property="bcName" column="BC_NAME" jdbcType="OTHER"/>
+            <result property="bgtdirCode" column="BGTDIR_CODE" jdbcType="OTHER"/>
+            <result property="bgtdirId" column="BGTDIR_ID" jdbcType="OTHER"/>
+            <result property="bgtdirName" column="BGTDIR_NAME" jdbcType="OTHER"/>
+            <result property="bgtsourceCode" column="BGTSOURCE_CODE" jdbcType="OTHER"/>
+            <result property="bgtsourceId" column="BGTSOURCE_ID" jdbcType="OTHER"/>
+            <result property="bgtsourceName" column="BGTSOURCE_NAME" jdbcType="OTHER"/>
+            <result property="bgttypeCode" column="BGTTYPE_CODE" jdbcType="OTHER"/>
+            <result property="bgttypeId" column="BGTTYPE_ID" jdbcType="OTHER"/>
+            <result property="bgttypeName" column="BGTTYPE_NAME" jdbcType="OTHER"/>
+            <result property="bisCode" column="BIS_CODE" jdbcType="OTHER"/>
+            <result property="bisId" column="BIS_ID" jdbcType="OTHER"/>
+            <result property="bisName" column="BIS_NAME" jdbcType="OTHER"/>
+            <result property="bpCode" column="BP_CODE" jdbcType="OTHER"/>
+            <result property="bpId" column="BP_ID" jdbcType="OTHER"/>
+            <result property="bpName" column="BP_NAME" jdbcType="OTHER"/>
+            <result property="bsoCode" column="BSO_CODE" jdbcType="OTHER"/>
+            <result property="bsoId" column="BSO_ID" jdbcType="OTHER"/>
+            <result property="bsoName" column="BSO_NAME" jdbcType="OTHER"/>
+            <result property="budgetvouCode" column="BUDGETVOU_CODE" jdbcType="OTHER"/>
+            <result property="budgetvouId" column="BUDGETVOU_ID" jdbcType="OTHER"/>
+            <result property="budgetvouName" column="BUDGETVOU_NAME" jdbcType="OTHER"/>
+            <result property="cbCode" column="CB_CODE" jdbcType="OTHER"/>
+            <result property="cbId" column="CB_ID" jdbcType="OTHER"/>
+            <result property="cbName" column="CB_NAME" jdbcType="OTHER"/>
+            <result property="ccid" column="CCID" jdbcType="OTHER"/>
+            <result property="clearaccountName" column="CLEARACCOUNT_NAME" jdbcType="OTHER"/>
+            <result property="clearaccountbank" column="CLEARACCOUNTBANK" jdbcType="OTHER"/>
+            <result property="clearaccountno" column="CLEARACCOUNTNO" jdbcType="OTHER"/>
+            <result property="coaId" column="COA_ID" jdbcType="OTHER"/>
+            <result property="ctCode" column="CT_CODE" jdbcType="OTHER"/>
+            <result property="ctId" column="CT_ID" jdbcType="OTHER"/>
+            <result property="ctName" column="CT_NAME" jdbcType="OTHER"/>
+            <result property="dirCode" column="DIR_CODE" jdbcType="OTHER"/>
+            <result property="dirId" column="DIR_ID" jdbcType="OTHER"/>
+            <result property="dirName" column="DIR_NAME" jdbcType="OTHER"/>
+            <result property="editorCode" column="EDITOR_CODE" jdbcType="OTHER"/>
+            <result property="editorId" column="EDITOR_ID" jdbcType="OTHER"/>
+            <result property="editorName" column="EDITOR_NAME" jdbcType="OTHER"/>
+            <result property="expecoCode" column="EXPECO_CODE" jdbcType="OTHER"/>
+            <result property="expecoId" column="EXPECO_ID" jdbcType="OTHER"/>
+            <result property="expecoName" column="EXPECO_NAME" jdbcType="OTHER"/>
+            <result property="expfuncCode" column="EXPFUNC_CODE" jdbcType="OTHER"/>
+            <result property="expfuncId" column="EXPFUNC_ID" jdbcType="OTHER"/>
+            <result property="expfuncName" column="EXPFUNC_NAME" jdbcType="OTHER"/>
+            <result property="fasnCode" column="FASN_CODE" jdbcType="OTHER"/>
+            <result property="fasnId" column="FASN_ID" jdbcType="OTHER"/>
+            <result property="fasnName" column="FASN_NAME" jdbcType="OTHER"/>
+            <result property="ffCode" column="FF_CODE" jdbcType="OTHER"/>
+            <result property="ffId" column="FF_ID" jdbcType="OTHER"/>
+            <result property="ffName" column="FF_NAME" jdbcType="OTHER"/>
+            <result property="fileCode" column="FILE_CODE" jdbcType="OTHER"/>
+            <result property="fileId" column="FILE_ID" jdbcType="OTHER"/>
+            <result property="fileName" column="FILE_NAME" jdbcType="OTHER"/>
+            <result property="fmCode" column="FM_CODE" jdbcType="OTHER"/>
+            <result property="fmId" column="FM_ID" jdbcType="OTHER"/>
+            <result property="fmName" column="FM_NAME" jdbcType="OTHER"/>
+            <result property="fundtypeCode" column="FUNDTYPE_CODE" jdbcType="OTHER"/>
+            <result property="fundtypeId" column="FUNDTYPE_ID" jdbcType="OTHER"/>
+            <result property="fundtypeName" column="FUNDTYPE_NAME" jdbcType="OTHER"/>
+            <result property="govExpecoCode" column="GOVEXPECO_CODE" jdbcType="OTHER"/>
+            <result property="govExpecoId" column="GOVEXPECO_ID" jdbcType="OTHER"/>
+            <result property="govExpecoName" column="GOVEXPECO_NAME" jdbcType="OTHER"/>
+            <result property="gpAgencyCode" column="GP_AGENCY_CODE" jdbcType="OTHER"/>
+            <result property="gpAgencyId" column="GP_AGENCY_ID" jdbcType="OTHER"/>
+            <result property="gpAgencyName" column="GP_AGENCY_NAME" jdbcType="OTHER"/>
+            <result property="gpbarnCode" column="GPBARN_CODE" jdbcType="OTHER"/>
+            <result property="gpbarnId" column="GPBARN_ID" jdbcType="OTHER"/>
+            <result property="gpbarnName" column="GPBARN_NAME" jdbcType="OTHER"/>
+            <result property="gpplanCode" column="GPPLAN_CODE" jdbcType="OTHER"/>
+            <result property="gpplanId" column="GPPLAN_ID" jdbcType="OTHER"/>
+            <result property="gpplanName" column="GPPLAN_NAME" jdbcType="OTHER"/>
+            <result property="gpvouCode" column="GPVOU_CODE" jdbcType="OTHER"/>
+            <result property="gpvouId" column="GPVOU_ID" jdbcType="OTHER"/>
+            <result property="gpvouName" column="GPVOU_NAME" jdbcType="OTHER"/>
+            <result property="groupIdCode" column="GROUP_ID_CODE" jdbcType="OTHER"/>
+            <result property="groupIdId" column="GROUP_ID_ID" jdbcType="OTHER"/>
+            <result property="groupIdName" column="GROUP_ID_NAME" jdbcType="OTHER"/>
+            <result property="gzbsCode" column="GZBS_CODE" jdbcType="OTHER"/>
+            <result property="gzbsId" column="GZBS_ID" jdbcType="OTHER"/>
+            <result property="gzbsName" column="GZBS_NAME" jdbcType="OTHER"/>
+            <result property="ibCode" column="IB_CODE" jdbcType="OTHER"/>
+            <result property="ibId" column="IB_ID" jdbcType="OTHER"/>
+            <result property="ibName" column="IB_NAME" jdbcType="OTHER"/>
+            <result property="ienCode" column="IEN_CODE" jdbcType="OTHER"/>
+            <result property="ienId" column="IEN_ID" jdbcType="OTHER"/>
+            <result property="ienName" column="IEN_NAME" jdbcType="OTHER"/>
+            <result property="inBisCode" column="IN_BIS_CODE" jdbcType="OTHER"/>
+            <result property="inBisId" column="IN_BIS_ID" jdbcType="OTHER"/>
+            <result property="inBisName" column="IN_BIS_NAME" jdbcType="OTHER"/>
+            <result property="inBsCode" column="IN_BS_CODE" jdbcType="OTHER"/>
+            <result property="inBsId" column="IN_BS_ID" jdbcType="OTHER"/>
+            <result property="inBsName" column="IN_BS_NAME" jdbcType="OTHER"/>
+            <result property="incomeaccountName" column="INCOMEACCOUNT_NAME" jdbcType="OTHER"/>
+            <result property="incomeaccountbank" column="INCOMEACCOUNTBANK" jdbcType="OTHER"/>
+            <result property="incomeaccountno" column="INCOMEACCOUNTNO" jdbcType="OTHER"/>
+            <result property="inpmCode" column="INPM_CODE" jdbcType="OTHER"/>
+            <result property="inpmId" column="INPM_ID" jdbcType="OTHER"/>
+            <result property="inpmName" column="INPM_NAME" jdbcType="OTHER"/>
+            <result property="managebranchCode" column="MANAGEBRANCH_CODE" jdbcType="OTHER"/>
+            <result property="managebranchId" column="MANAGEBRANCH_ID" jdbcType="OTHER"/>
+            <result property="managebranchName" column="MANAGEBRANCH_NAME" jdbcType="OTHER"/>
+            <result property="mbCode" column="MB_CODE" jdbcType="OTHER"/>
+            <result property="mbId" column="MB_ID" jdbcType="OTHER"/>
+            <result property="mbName" column="MB_NAME" jdbcType="OTHER"/>
+            <result property="md5" column="MD5" jdbcType="OTHER"/>
+            <result property="modeCode" column="MODE_CODE" jdbcType="OTHER"/>
+            <result property="modeId" column="MODE_ID" jdbcType="OTHER"/>
+            <result property="modeName" column="MODE_NAME" jdbcType="OTHER"/>
+            <result property="opuserCode" column="OPUSER_CODE" jdbcType="OTHER"/>
+            <result property="opuserId" column="OPUSER_ID" jdbcType="OTHER"/>
+            <result property="opuserName" column="OPUSER_NAME" jdbcType="OTHER"/>
+            <result property="payaccountName" column="PAYACCOUNT_NAME" jdbcType="OTHER"/>
+            <result property="payaccountbank" column="PAYACCOUNTBANK" jdbcType="OTHER"/>
+            <result property="payaccountno" column="PAYACCOUNTNO" jdbcType="OTHER"/>
+            <result property="paykindCode" column="PAYKIND_CODE" jdbcType="OTHER"/>
+            <result property="paykindId" column="PAYKIND_ID" jdbcType="OTHER"/>
+            <result property="paykindName" column="PAYKIND_NAME" jdbcType="OTHER"/>
+            <result property="paytypeCode" column="PAYTYPE_CODE" jdbcType="OTHER"/>
+            <result property="paytypeId" column="PAYTYPE_ID" jdbcType="OTHER"/>
+            <result property="paytypeName" column="PAYTYPE_NAME" jdbcType="OTHER"/>
+            <result property="pbCode" column="PB_CODE" jdbcType="OTHER"/>
+            <result property="pbId" column="PB_ID" jdbcType="OTHER"/>
+            <result property="pbName" column="PB_NAME" jdbcType="OTHER"/>
+            <result property="pfCode" column="PF_CODE" jdbcType="OTHER"/>
+            <result property="pfId" column="PF_ID" jdbcType="OTHER"/>
+            <result property="pfName" column="PF_NAME" jdbcType="OTHER"/>
+            <result property="provCode" column="PROV_CODE" jdbcType="OTHER"/>
+            <result property="provId" column="PROV_ID" jdbcType="OTHER"/>
+            <result property="provName" column="PROV_NAME" jdbcType="OTHER"/>
+            <result property="setmodeCode" column="SETMODE_CODE" jdbcType="OTHER"/>
+            <result property="setmodeId" column="SETMODE_ID" jdbcType="OTHER"/>
+            <result property="setmodeName" column="SETMODE_NAME" jdbcType="OTHER"/>
+            <result property="smCode" column="SM_CODE" jdbcType="OTHER"/>
+            <result property="smId" column="SM_ID" jdbcType="OTHER"/>
+            <result property="smName" column="SM_NAME" jdbcType="OTHER"/>
+            <result property="stCode" column="ST_CODE" jdbcType="OTHER"/>
+            <result property="stId" column="ST_ID" jdbcType="OTHER"/>
+            <result property="stName" column="ST_NAME" jdbcType="OTHER"/>
+            <result property="useenCode" column="USEEN_CODE" jdbcType="OTHER"/>
+            <result property="useenId" column="USEEN_ID" jdbcType="OTHER"/>
+            <result property="useenName" column="USEEN_NAME" jdbcType="OTHER"/>
+            <result property="waCode" column="WA_CODE" jdbcType="OTHER"/>
+            <result property="waId" column="WA_ID" jdbcType="OTHER"/>
+            <result property="waName" column="WA_NAME" jdbcType="OTHER"/>
+            <result property="year" column="YEAR" jdbcType="OTHER"/>
+            <result property="zfcgbsCode" column="ZFCGBS_CODE" jdbcType="OTHER"/>
+            <result property="zfcgbsId" column="ZFCGBS_ID" jdbcType="OTHER"/>
+            <result property="zfcgbsName" column="ZFCGBS_NAME" jdbcType="OTHER"/>
+            <result property="hold10Code" column="HOLD10CODE" jdbcType="OTHER"/>
+            <result property="hold10Id" column="HOLD10ID" jdbcType="OTHER"/>
+            <result property="hold10Name" column="HOLD10NAME" jdbcType="OTHER"/>
+            <result property="hold1Code" column="HOLD1CODE" jdbcType="OTHER"/>
+            <result property="hold1Id" column="HOLD1ID" jdbcType="OTHER"/>
+            <result property="hold1Name" column="HOLD1NAME" jdbcType="OTHER"/>
+            <result property="hold2Code" column="HOLD2CODE" jdbcType="OTHER"/>
+            <result property="hold2Id" column="HOLD2ID" jdbcType="OTHER"/>
+            <result property="hold2Name" column="HOLD2NAME" jdbcType="OTHER"/>
+            <result property="hold3Code" column="HOLD3CODE" jdbcType="OTHER"/>
+            <result property="hold3Id" column="HOLD3ID" jdbcType="OTHER"/>
+            <result property="hold3Name" column="HOLD3NAME" jdbcType="OTHER"/>
+            <result property="hold4Code" column="HOLD4CODE" jdbcType="OTHER"/>
+            <result property="hold4Id" column="HOLD4ID" jdbcType="OTHER"/>
+            <result property="hold4Name" column="HOLD4NAME" jdbcType="OTHER"/>
+            <result property="hold5Code" column="HOLD5CODE" jdbcType="OTHER"/>
+            <result property="hold5Id" column="HOLD5ID" jdbcType="OTHER"/>
+            <result property="hold5Name" column="HOLD5NAME" jdbcType="OTHER"/>
+            <result property="hold6Code" column="HOLD6CODE" jdbcType="OTHER"/>
+            <result property="hold6Id" column="HOLD6ID" jdbcType="OTHER"/>
+            <result property="hold6Name" column="HOLD6NAME" jdbcType="OTHER"/>
+            <result property="hold7Code" column="HOLD7CODE" jdbcType="OTHER"/>
+            <result property="hold7Id" column="HOLD7ID" jdbcType="OTHER"/>
+            <result property="hold7Name" column="HOLD7NAME" jdbcType="OTHER"/>
+            <result property="hold8Code" column="HOLD8CODE" jdbcType="OTHER"/>
+            <result property="hold8Id" column="HOLD8ID" jdbcType="OTHER"/>
+            <result property="hold8Name" column="HOLD8NAME" jdbcType="OTHER"/>
+            <result property="hold9Code" column="HOLD9CODE" jdbcType="OTHER"/>
+            <result property="hold9Id" column="HOLD9ID" jdbcType="OTHER"/>
+            <result property="hold9Name" column="HOLD9NAME" jdbcType="OTHER"/>
+            <result property="budgetgroupCode" column="BUDGETGROUP_CODE" jdbcType="OTHER"/>
+            <result property="budgetgroupId" column="BUDGETGROUP_ID" jdbcType="OTHER"/>
+            <result property="budgetgroupName" column="BUDGETGROUP_NAME" jdbcType="OTHER"/>
+            <result property="catalogueCode" column="CATALOGUE_CODE" jdbcType="OTHER"/>
+            <result property="catalogueId" column="CATALOGUE_ID" jdbcType="OTHER"/>
+            <result property="catalogueName" column="CATALOGUE_NAME" jdbcType="OTHER"/>
+            <result property="filesuperCode" column="FILESUPER_CODE" jdbcType="OTHER"/>
+            <result property="filesuperId" column="FILESUPER_ID" jdbcType="OTHER"/>
+            <result property="filesuperName" column="FILESUPER_NAME" jdbcType="OTHER"/>
+            <result property="projectsCode" column="PROJECTS_CODE" jdbcType="OTHER"/>
+            <result property="projectsId" column="PROJECTS_ID" jdbcType="OTHER"/>
+            <result property="projectsName" column="PROJECTS_NAME" jdbcType="OTHER"/>
+            <result property="specialstaffCode" column="SPECIALSTAFF_CODE" jdbcType="OTHER"/>
+            <result property="specialstaffId" column="SPECIALSTAFF_ID" jdbcType="OTHER"/>
+            <result property="specialstaffName" column="SPECIALSTAFF_NAME" jdbcType="OTHER"/>
+            <result property="puritemCode" column="PURITEM_CODE" jdbcType="OTHER"/>
+            <result property="puritemId" column="PURITEM_ID" jdbcType="OTHER"/>
+            <result property="puritemName" column="PURITEM_NAME" jdbcType="OTHER"/>
+            <result property="supbgtdocnoCode" column="SUPBGTDOCNO_CODE" jdbcType="OTHER"/>
+            <result property="supbgtdocnoId" column="SUPBGTDOCNO_ID" jdbcType="OTHER"/>
+            <result property="supbgtdocnoName" column="SUPBGTDOCNO_NAME" jdbcType="OTHER"/>
+            <result property="accountTypeCode" column="ACCOUNT_TYPE_CODE" jdbcType="OTHER"/>
+            <result property="accountTypeId" column="ACCOUNT_TYPE_ID" jdbcType="OTHER"/>
+            <result property="accountTypeName" column="ACCOUNT_TYPE_NAME" jdbcType="OTHER"/>
+            <result property="accountczTypeCode" column="ACCOUNTCZ_TYPE_CODE" jdbcType="OTHER"/>
+            <result property="accountczTypeId" column="ACCOUNTCZ_TYPE_ID" jdbcType="OTHER"/>
+            <result property="accountczTypeName" column="ACCOUNTCZ_TYPE_NAME" jdbcType="OTHER"/>
+            <result property="agentAccountCode" column="AGENT_ACCOUNT_CODE" jdbcType="OTHER"/>
+            <result property="agentAccountId" column="AGENT_ACCOUNT_ID" jdbcType="OTHER"/>
+            <result property="agentAccountName" column="AGENT_ACCOUNT_NAME" jdbcType="OTHER"/>
+            <result property="paySummaryCode" column="PAY_SUMMARY_CODE" jdbcType="OTHER"/>
+            <result property="paySummaryId" column="PAY_SUMMARY_ID" jdbcType="OTHER"/>
+            <result property="paySummaryName" column="PAY_SUMMARY_NAME" jdbcType="OTHER"/>
+            <result property="tbCode" column="TB_CODE" jdbcType="OTHER"/>
+            <result property="tbId" column="TB_ID" jdbcType="OTHER"/>
+            <result property="tbName" column="TB_NAME" jdbcType="OTHER"/>
+            <result property="ifaccCode" column="IFACC_CODE" jdbcType="OTHER"/>
+            <result property="ifaccId" column="IFACC_ID" jdbcType="OTHER"/>
+            <result property="ifaccName" column="IFACC_NAME" jdbcType="OTHER"/>
+        </association>
+    </resultMap>
+
+    <!-- balance表Ccids表关联查询 -->
+    <select id="queryAllByRelatedCcids" resultMap="balanceCcidResultMap">
+        select
+          balance.ID, balance.CREATE_BY, balance.CREATE_DATE, balance.LAST_MODIFIED_BY, balance.LAST_MODIFIED_DATE, balance.LAST_MODIFIED_VERSION, balance.ACCOUNT_ID, balance.ADJUST_INCREASE_MONEY, balance.ADJUST_INCREASING_MONEY, balance.ADJUST_MINUS_MONEY, balance.ADJUST_MINUSING_MONEY, balance.ADM_DIV_CODE, balance.AVI_MONEY, balance.AVING_MONEY, balance.BALANCE_ID, balance.CAN_USE_MONEY, balance.CCID, balance.DISTRIBUTE_FREEZE_MONEY, balance.DISTRIBUTE_FREEZING_MONEY, balance.DISTRIBUTE_MINUS_END_MONEY, balance.DISTRIBUTE_MINUSING_MONEY, balance.DISTRIBUTE_MONEY, balance.DISTRIBUTE_UNFREEZE_MONEY, balance.DISTRIBUTE_UNFREEZING_MONEY, balance.DISTRIBUTING_MONEY, balance.FREEZE_MONEY, balance.FREEZING_MONEY, balance.FROMCTRLID, balance.INCREASE_MONEY, balance.INCREASING_MONEY, balance.MINUS_END_MONEY, balance.MINUS_MONEY, balance.MINUSING_MONEY, balance.MONTH, balance.RECOVER_MONEY, balance.RECOVERING_MONEY, balance.REMARK, balance.SECOND_FROMCTRLID, balance.SUM_ID, balance.UNFREEZE_MONEY, balance.UNFREEZING_MONEY, balance.USE_END_MONEY, balance.USE_MONEY, balance.USING_MONEY, balance.VERIFICATION_MONEY, balance.VERIFICATIONING_MONEY, balance.YEAR,
+          ccids.ID as ccidId, ccids.CREATE_BY, ccids.CREATE_DATE, ccids.LAST_MODIFIED_BY, ccids.LAST_MODIFIED_DATE, ccids.LAST_MODIFIED_VERSION, ccids.ADM_DIV_CODE, ccids.AE_CODE, ccids.AE_ID, ccids.AE_NAME, ccids.AGENCY_CODE, ccids.AGENCY_ID, ccids.AGENCY_NAME, ccids.AGENCYEXP_CODE, ccids.AGENCYEXP_ID, ccids.AGENCYEXP_NAME, ccids.AS_CODE, ccids.AS_ID, ccids.AS_NAME, ccids.BAC_CODE, ccids.BAC_ID, ccids.BAC_NAME, ccids.BAI_CODE, ccids.BAI_ID, ccids.BAI_NAME, ccids.BAP_CODE, ccids.BAP_ID, ccids.BAP_NAME, ccids.BC_CODE, ccids.BC_ID, ccids.BC_NAME, ccids.BGTDIR_CODE, ccids.BGTDIR_ID, ccids.BGTDIR_NAME, ccids.BGTSOURCE_CODE, ccids.BGTSOURCE_ID, ccids.BGTSOURCE_NAME, ccids.BGTTYPE_CODE, ccids.BGTTYPE_ID, ccids.BGTTYPE_NAME, ccids.BIS_CODE, ccids.BIS_ID, ccids.BIS_NAME, ccids.BP_CODE, ccids.BP_ID, ccids.BP_NAME, ccids.BSO_CODE, ccids.BSO_ID, ccids.BSO_NAME, ccids.BUDGETVOU_CODE, ccids.BUDGETVOU_ID, ccids.BUDGETVOU_NAME, ccids.CB_CODE, ccids.CB_ID, ccids.CB_NAME, ccids.CCID, ccids.CLEARACCOUNT_NAME, ccids.CLEARACCOUNTBANK, ccids.CLEARACCOUNTNO, ccids.COA_ID, ccids.CT_CODE, ccids.CT_ID, ccids.CT_NAME, ccids.DIR_CODE, ccids.DIR_ID, ccids.DIR_NAME, ccids.EDITOR_CODE, ccids.EDITOR_ID, ccids.EDITOR_NAME, ccids.EXPECO_CODE, ccids.EXPECO_ID, ccids.EXPECO_NAME, ccids.EXPFUNC_CODE, ccids.EXPFUNC_ID, ccids.EXPFUNC_NAME, ccids.FASN_CODE, ccids.FASN_ID, ccids.FASN_NAME, ccids.FF_CODE, ccids.FF_ID, ccids.FF_NAME, ccids.FILE_CODE, ccids.FILE_ID, ccids.FILE_NAME, ccids.FM_CODE, ccids.FM_ID, ccids.FM_NAME, ccids.FUNDTYPE_CODE, ccids.FUNDTYPE_ID, ccids.FUNDTYPE_NAME, ccids.GOVEXPECO_CODE, ccids.GOVEXPECO_ID, ccids.GOVEXPECO_NAME, ccids.GP_AGENCY_CODE, ccids.GP_AGENCY_ID, ccids.GP_AGENCY_NAME, ccids.GPBARN_CODE, ccids.GPBARN_ID, ccids.GPBARN_NAME, ccids.GPPLAN_CODE, ccids.GPPLAN_ID, ccids.GPPLAN_NAME, ccids.GPVOU_CODE, ccids.GPVOU_ID, ccids.GPVOU_NAME, ccids.GROUP_ID_CODE, ccids.GROUP_ID_ID, ccids.GROUP_ID_NAME, ccids.GZBS_CODE, ccids.GZBS_ID, ccids.GZBS_NAME, ccids.IB_CODE, ccids.IB_ID, ccids.IB_NAME, ccids.IEN_CODE, ccids.IEN_ID, ccids.IEN_NAME, ccids.IN_BIS_CODE, ccids.IN_BIS_ID, ccids.IN_BIS_NAME, ccids.IN_BS_CODE, ccids.IN_BS_ID, ccids.IN_BS_NAME, ccids.INCOMEACCOUNT_NAME, ccids.INCOMEACCOUNTBANK, ccids.INCOMEACCOUNTNO, ccids.INPM_CODE, ccids.INPM_ID, ccids.INPM_NAME, ccids.MANAGEBRANCH_CODE, ccids.MANAGEBRANCH_ID, ccids.MANAGEBRANCH_NAME, ccids.MB_CODE, ccids.MB_ID, ccids.MB_NAME, ccids.MD5, ccids.MODE_CODE, ccids.MODE_ID, ccids.MODE_NAME, ccids.OPUSER_CODE, ccids.OPUSER_ID, ccids.OPUSER_NAME, ccids.PAYACCOUNT_NAME, ccids.PAYACCOUNTBANK, ccids.PAYACCOUNTNO, ccids.PAYKIND_CODE, ccids.PAYKIND_ID, ccids.PAYKIND_NAME, ccids.PAYTYPE_CODE, ccids.PAYTYPE_ID, ccids.PAYTYPE_NAME, ccids.PB_CODE, ccids.PB_ID, ccids.PB_NAME, ccids.PF_CODE, ccids.PF_ID, ccids.PF_NAME, ccids.PROV_CODE, ccids.PROV_ID, ccids.PROV_NAME, ccids.SETMODE_CODE, ccids.SETMODE_ID, ccids.SETMODE_NAME, ccids.SM_CODE, ccids.SM_ID, ccids.SM_NAME, ccids.ST_CODE, ccids.ST_ID, ccids.ST_NAME, ccids.USEEN_CODE, ccids.USEEN_ID, ccids.USEEN_NAME, ccids.WA_CODE, ccids.WA_ID, ccids.WA_NAME, ccids.YEAR, ccids.ZFCGBS_CODE, ccids.ZFCGBS_ID, ccids.ZFCGBS_NAME, ccids.HOLD10CODE, ccids.HOLD10ID, ccids.HOLD10NAME, ccids.HOLD1CODE, ccids.HOLD1ID, ccids.HOLD1NAME, ccids.HOLD2CODE, ccids.HOLD2ID, ccids.HOLD2NAME, ccids.HOLD3CODE, ccids.HOLD3ID, ccids.HOLD3NAME, ccids.HOLD4CODE, ccids.HOLD4ID, ccids.HOLD4NAME, ccids.HOLD5CODE, ccids.HOLD5ID, ccids.HOLD5NAME, ccids.HOLD6CODE, ccids.HOLD6ID, ccids.HOLD6NAME, ccids.HOLD7CODE, ccids.HOLD7ID, ccids.HOLD7NAME, ccids.HOLD8CODE, ccids.HOLD8ID, ccids.HOLD8NAME, ccids.HOLD9CODE, ccids.HOLD9ID, ccids.HOLD9NAME, ccids.BUDGETGROUP_CODE, ccids.BUDGETGROUP_ID, ccids.BUDGETGROUP_NAME, ccids.CATALOGUE_CODE, ccids.CATALOGUE_ID, ccids.CATALOGUE_NAME, ccids.FILESUPER_CODE, ccids.FILESUPER_ID, ccids.FILESUPER_NAME, ccids.PROJECTS_CODE, ccids.PROJECTS_ID, ccids.PROJECTS_NAME, ccids.SPECIALSTAFF_CODE, ccids.SPECIALSTAFF_ID, ccids.SPECIALSTAFF_NAME, ccids.PURITEM_CODE, ccids.PURITEM_ID, ccids.PURITEM_NAME, ccids.SUPBGTDOCNO_CODE, ccids.SUPBGTDOCNO_ID, ccids.SUPBGTDOCNO_NAME, ccids.ACCOUNT_TYPE_CODE, ccids.ACCOUNT_TYPE_ID, ccids.ACCOUNT_TYPE_NAME, ccids.ACCOUNTCZ_TYPE_CODE, ccids.ACCOUNTCZ_TYPE_ID, ccids.ACCOUNTCZ_TYPE_NAME, ccids.AGENT_ACCOUNT_CODE, ccids.AGENT_ACCOUNT_ID, ccids.AGENT_ACCOUNT_NAME, ccids.PAY_SUMMARY_CODE, ccids.PAY_SUMMARY_ID, ccids.PAY_SUMMARY_NAME, ccids.TB_CODE, ccids.TB_ID, ccids.TB_NAME, ccids.IFACC_CODE, ccids.IFACC_ID, ccids.IFACC_NAME
+        from DFDEVDF0114.FGL_BALANCE balance INNER JOIN DFDEVDF0114.FGL_CCIDS ccids ON balance.ccid = ccids.ccid where balance.year = '2020' and balance.adm_div_code  = '360000000'  and balance.LAST_MODIFIED_VERSION = '6'
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ACCOUNT_ID, ADJUST_INCREASE_MONEY, ADJUST_INCREASING_MONEY, ADJUST_MINUS_MONEY, ADJUST_MINUSING_MONEY, ADM_DIV_CODE, AVI_MONEY, AVING_MONEY, BALANCE_ID, CAN_USE_MONEY, CCID, DISTRIBUTE_FREEZE_MONEY, DISTRIBUTE_FREEZING_MONEY, DISTRIBUTE_MINUS_END_MONEY, DISTRIBUTE_MINUSING_MONEY, DISTRIBUTE_MONEY, DISTRIBUTE_UNFREEZE_MONEY, DISTRIBUTE_UNFREEZING_MONEY, DISTRIBUTING_MONEY, FREEZE_MONEY, FREEZING_MONEY, FROMCTRLID, INCREASE_MONEY, INCREASING_MONEY, MINUS_END_MONEY, MINUS_MONEY, MINUSING_MONEY, MONTH, RECOVER_MONEY, RECOVERING_MONEY, REMARK, SECOND_FROMCTRLID, SUM_ID, UNFREEZE_MONEY, UNFREEZING_MONEY, USE_END_MONEY, USE_MONEY, USING_MONEY, VERIFICATION_MONEY, VERIFICATIONING_MONEY, YEAR
+        from DFDEVDF0114.FGL_BALANCE
+        where ID = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ACCOUNT_ID, ADJUST_INCREASE_MONEY, ADJUST_INCREASING_MONEY, ADJUST_MINUS_MONEY, ADJUST_MINUSING_MONEY, ADM_DIV_CODE, AVI_MONEY, AVING_MONEY, BALANCE_ID, CAN_USE_MONEY, CCID, DISTRIBUTE_FREEZE_MONEY, DISTRIBUTE_FREEZING_MONEY, DISTRIBUTE_MINUS_END_MONEY, DISTRIBUTE_MINUSING_MONEY, DISTRIBUTE_MONEY, DISTRIBUTE_UNFREEZE_MONEY, DISTRIBUTE_UNFREEZING_MONEY, DISTRIBUTING_MONEY, FREEZE_MONEY, FREEZING_MONEY, FROMCTRLID, INCREASE_MONEY, INCREASING_MONEY, MINUS_END_MONEY, MINUS_MONEY, MINUSING_MONEY, MONTH, RECOVER_MONEY, RECOVERING_MONEY, REMARK, SECOND_FROMCTRLID, SUM_ID, UNFREEZE_MONEY, UNFREEZING_MONEY, USE_END_MONEY, USE_MONEY, USING_MONEY, VERIFICATION_MONEY, VERIFICATIONING_MONEY, YEAR
+        from DFDEVDF0114.FGL_BALANCE
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAll" resultMap="resultMap">
+        select
+          ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ACCOUNT_ID, ADJUST_INCREASE_MONEY, ADJUST_INCREASING_MONEY, ADJUST_MINUS_MONEY, ADJUST_MINUSING_MONEY, ADM_DIV_CODE, AVI_MONEY, AVING_MONEY, BALANCE_ID, CAN_USE_MONEY, CCID, DISTRIBUTE_FREEZE_MONEY, DISTRIBUTE_FREEZING_MONEY, DISTRIBUTE_MINUS_END_MONEY, DISTRIBUTE_MINUSING_MONEY, DISTRIBUTE_MONEY, DISTRIBUTE_UNFREEZE_MONEY, DISTRIBUTE_UNFREEZING_MONEY, DISTRIBUTING_MONEY, FREEZE_MONEY, FREEZING_MONEY, FROMCTRLID, INCREASE_MONEY, INCREASING_MONEY, MINUS_END_MONEY, MINUS_MONEY, MINUSING_MONEY, MONTH, RECOVER_MONEY, RECOVERING_MONEY, REMARK, SECOND_FROMCTRLID, SUM_ID, UNFREEZE_MONEY, UNFREEZING_MONEY, USE_END_MONEY, USE_MONEY, USING_MONEY, VERIFICATION_MONEY, VERIFICATIONING_MONEY, YEAR
+        from DFDEVDF0114.FGL_BALANCE
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAllByCondition" resultMap="resultMap">
+        select
+        ID, CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ACCOUNT_ID,
+        ADJUST_INCREASE_MONEY, ADJUST_INCREASING_MONEY, ADJUST_MINUS_MONEY, ADJUST_MINUSING_MONEY, ADM_DIV_CODE,
+        AVI_MONEY, AVING_MONEY, BALANCE_ID, CAN_USE_MONEY, CCID, DISTRIBUTE_FREEZE_MONEY, DISTRIBUTE_FREEZING_MONEY,
+        DISTRIBUTE_MINUS_END_MONEY, DISTRIBUTE_MINUSING_MONEY, DISTRIBUTE_MONEY, DISTRIBUTE_UNFREEZE_MONEY,
+        DISTRIBUTE_UNFREEZING_MONEY, DISTRIBUTING_MONEY, FREEZE_MONEY, FREEZING_MONEY, FROMCTRLID, INCREASE_MONEY,
+        INCREASING_MONEY, MINUS_END_MONEY, MINUS_MONEY, MINUSING_MONEY, MONTH, RECOVER_MONEY, RECOVERING_MONEY, REMARK,
+        SECOND_FROMCTRLID, SUM_ID, UNFREEZE_MONEY, UNFREEZING_MONEY, USE_END_MONEY, USE_MONEY, USING_MONEY,
+        VERIFICATION_MONEY, VERIFICATIONING_MONEY, YEAR
+        from DFDEVDF0114.FGL_BALANCE
+        <where>
+            <if test="id != null">
+                and ID = #{id}
+            </if>
+            <if test="createBy != null">
+                and CREATE_BY = #{createBy}
+            </if>
+            <if test="createDate != null">
+                and CREATE_DATE = #{createDate}
+            </if>
+            <if test="lastModifiedBy != null">
+                and LAST_MODIFIED_BY = #{lastModifiedBy}
+            </if>
+            <if test="lastModifiedDate != null">
+                and LAST_MODIFIED_DATE = #{lastModifiedDate}
+            </if>
+            <if test="lastModifiedVersion != null">
+                and LAST_MODIFIED_VERSION = #{lastModifiedVersion}
+            </if>
+            <if test="accountId != null">
+                and ACCOUNT_ID = #{accountId}
+            </if>
+            <if test="adjustIncreaseMoney != null">
+                and ADJUST_INCREASE_MONEY = #{adjustIncreaseMoney}
+            </if>
+            <if test="adjustIncreasingMoney != null">
+                and ADJUST_INCREASING_MONEY = #{adjustIncreasingMoney}
+            </if>
+            <if test="adjustMinusMoney != null">
+                and ADJUST_MINUS_MONEY = #{adjustMinusMoney}
+            </if>
+            <if test="adjustMinusingMoney != null">
+                and ADJUST_MINUSING_MONEY = #{adjustMinusingMoney}
+            </if>
+            <if test="admDivCode != null">
+                and ADM_DIV_CODE = #{admDivCode}
+            </if>
+            <if test="aviMoney != null">
+                and AVI_MONEY = #{aviMoney}
+            </if>
+            <if test="avingMoney != null">
+                and AVING_MONEY = #{avingMoney}
+            </if>
+            <if test="balanceId != null">
+                and BALANCE_ID = #{balanceId}
+            </if>
+            <if test="canUseMoney != null">
+                and CAN_USE_MONEY = #{canUseMoney}
+            </if>
+            <if test="ccid != null">
+                and CCID = #{ccid}
+            </if>
+            <if test="distributeFreezeMoney != null">
+                and DISTRIBUTE_FREEZE_MONEY = #{distributeFreezeMoney}
+            </if>
+            <if test="distributeFreezingMoney != null">
+                and DISTRIBUTE_FREEZING_MONEY = #{distributeFreezingMoney}
+            </if>
+            <if test="distributeMinusEndMoney != null">
+                and DISTRIBUTE_MINUS_END_MONEY = #{distributeMinusEndMoney}
+            </if>
+            <if test="distributeMinusingMoney != null">
+                and DISTRIBUTE_MINUSING_MONEY = #{distributeMinusingMoney}
+            </if>
+            <if test="distributeMoney != null">
+                and DISTRIBUTE_MONEY = #{distributeMoney}
+            </if>
+            <if test="distributeUnfreezeMoney != null">
+                and DISTRIBUTE_UNFREEZE_MONEY = #{distributeUnfreezeMoney}
+            </if>
+            <if test="distributeUnfreezingMoney != null">
+                and DISTRIBUTE_UNFREEZING_MONEY = #{distributeUnfreezingMoney}
+            </if>
+            <if test="distributingMoney != null">
+                and DISTRIBUTING_MONEY = #{distributingMoney}
+            </if>
+            <if test="freezeMoney != null">
+                and FREEZE_MONEY = #{freezeMoney}
+            </if>
+            <if test="freezingMoney != null">
+                and FREEZING_MONEY = #{freezingMoney}
+            </if>
+            <if test="fromctrlid != null">
+                and FROMCTRLID = #{fromctrlid}
+            </if>
+            <if test="increaseMoney != null">
+                and INCREASE_MONEY = #{increaseMoney}
+            </if>
+            <if test="increasingMoney != null">
+                and INCREASING_MONEY = #{increasingMoney}
+            </if>
+            <if test="minusEndMoney != null">
+                and MINUS_END_MONEY = #{minusEndMoney}
+            </if>
+            <if test="minusMoney != null">
+                and MINUS_MONEY = #{minusMoney}
+            </if>
+            <if test="minusingMoney != null">
+                and MINUSING_MONEY = #{minusingMoney}
+            </if>
+            <if test="month != null">
+                and MONTH = #{month}
+            </if>
+            <if test="recoverMoney != null">
+                and RECOVER_MONEY = #{recoverMoney}
+            </if>
+            <if test="recoveringMoney != null">
+                and RECOVERING_MONEY = #{recoveringMoney}
+            </if>
+            <if test="remark != null">
+                and REMARK = #{remark}
+            </if>
+            <if test="secondFromctrlid != null">
+                and SECOND_FROMCTRLID = #{secondFromctrlid}
+            </if>
+            <if test="sumId != null">
+                and SUM_ID = #{sumId}
+            </if>
+            <if test="unfreezeMoney != null">
+                and UNFREEZE_MONEY = #{unfreezeMoney}
+            </if>
+            <if test="unfreezingMoney != null">
+                and UNFREEZING_MONEY = #{unfreezingMoney}
+            </if>
+            <if test="useEndMoney != null">
+                and USE_END_MONEY = #{useEndMoney}
+            </if>
+            <if test="useMoney != null">
+                and USE_MONEY = #{useMoney}
+            </if>
+            <if test="usingMoney != null">
+                and USING_MONEY = #{usingMoney}
+            </if>
+            <if test="verificationMoney != null">
+                and VERIFICATION_MONEY = #{verificationMoney}
+            </if>
+            <if test="verificationingMoney != null">
+                and VERIFICATIONING_MONEY = #{verificationingMoney}
+            </if>
+            <if test="year != null">
+                and YEAR = #{year}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into DFDEVDF0114.FGL_BALANCE(CREATE_BY, CREATE_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE, LAST_MODIFIED_VERSION, ACCOUNT_ID, ADJUST_INCREASE_MONEY, ADJUST_INCREASING_MONEY, ADJUST_MINUS_MONEY, ADJUST_MINUSING_MONEY, ADM_DIV_CODE, AVI_MONEY, AVING_MONEY, BALANCE_ID, CAN_USE_MONEY, CCID, DISTRIBUTE_FREEZE_MONEY, DISTRIBUTE_FREEZING_MONEY, DISTRIBUTE_MINUS_END_MONEY, DISTRIBUTE_MINUSING_MONEY, DISTRIBUTE_MONEY, DISTRIBUTE_UNFREEZE_MONEY, DISTRIBUTE_UNFREEZING_MONEY, DISTRIBUTING_MONEY, FREEZE_MONEY, FREEZING_MONEY, FROMCTRLID, INCREASE_MONEY, INCREASING_MONEY, MINUS_END_MONEY, MINUS_MONEY, MINUSING_MONEY, MONTH, RECOVER_MONEY, RECOVERING_MONEY, REMARK, SECOND_FROMCTRLID, SUM_ID, UNFREEZE_MONEY, UNFREEZING_MONEY, USE_END_MONEY, USE_MONEY, USING_MONEY, VERIFICATION_MONEY, VERIFICATIONING_MONEY, YEAR)
+        values (#{createBy}, #{createDate}, #{lastModifiedBy}, #{lastModifiedDate}, #{lastModifiedVersion}, #{accountId}, #{adjustIncreaseMoney}, #{adjustIncreasingMoney}, #{adjustMinusMoney}, #{adjustMinusingMoney}, #{admDivCode}, #{aviMoney}, #{avingMoney}, #{balanceId}, #{canUseMoney}, #{ccid}, #{distributeFreezeMoney}, #{distributeFreezingMoney}, #{distributeMinusEndMoney}, #{distributeMinusingMoney}, #{distributeMoney}, #{distributeUnfreezeMoney}, #{distributeUnfreezingMoney}, #{distributingMoney}, #{freezeMoney}, #{freezingMoney}, #{fromctrlid}, #{increaseMoney}, #{increasingMoney}, #{minusEndMoney}, #{minusMoney}, #{minusingMoney}, #{month}, #{recoverMoney}, #{recoveringMoney}, #{remark}, #{secondFromctrlid}, #{sumId}, #{unfreezeMoney}, #{unfreezingMoney}, #{useEndMoney}, #{useMoney}, #{usingMoney}, #{verificationMoney}, #{verificationingMoney}, #{year})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update DFDEVDF0114.FGL_BALANCE
+        <set>
+            <if test="createBy != null">
+                CREATE_BY = #{createBy},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate},
+            </if>
+            <if test="lastModifiedBy != null">
+                LAST_MODIFIED_BY = #{lastModifiedBy},
+            </if>
+            <if test="lastModifiedDate != null">
+                LAST_MODIFIED_DATE = #{lastModifiedDate},
+            </if>
+            <if test="lastModifiedVersion != null">
+                LAST_MODIFIED_VERSION = #{lastModifiedVersion},
+            </if>
+            <if test="accountId != null">
+                ACCOUNT_ID = #{accountId},
+            </if>
+            <if test="adjustIncreaseMoney != null">
+                ADJUST_INCREASE_MONEY = #{adjustIncreaseMoney},
+            </if>
+            <if test="adjustIncreasingMoney != null">
+                ADJUST_INCREASING_MONEY = #{adjustIncreasingMoney},
+            </if>
+            <if test="adjustMinusMoney != null">
+                ADJUST_MINUS_MONEY = #{adjustMinusMoney},
+            </if>
+            <if test="adjustMinusingMoney != null">
+                ADJUST_MINUSING_MONEY = #{adjustMinusingMoney},
+            </if>
+            <if test="admDivCode != null">
+                ADM_DIV_CODE = #{admDivCode},
+            </if>
+            <if test="aviMoney != null">
+                AVI_MONEY = #{aviMoney},
+            </if>
+            <if test="avingMoney != null">
+                AVING_MONEY = #{avingMoney},
+            </if>
+            <if test="balanceId != null">
+                BALANCE_ID = #{balanceId},
+            </if>
+            <if test="canUseMoney != null">
+                CAN_USE_MONEY = #{canUseMoney},
+            </if>
+            <if test="ccid != null">
+                CCID = #{ccid},
+            </if>
+            <if test="distributeFreezeMoney != null">
+                DISTRIBUTE_FREEZE_MONEY = #{distributeFreezeMoney},
+            </if>
+            <if test="distributeFreezingMoney != null">
+                DISTRIBUTE_FREEZING_MONEY = #{distributeFreezingMoney},
+            </if>
+            <if test="distributeMinusEndMoney != null">
+                DISTRIBUTE_MINUS_END_MONEY = #{distributeMinusEndMoney},
+            </if>
+            <if test="distributeMinusingMoney != null">
+                DISTRIBUTE_MINUSING_MONEY = #{distributeMinusingMoney},
+            </if>
+            <if test="distributeMoney != null">
+                DISTRIBUTE_MONEY = #{distributeMoney},
+            </if>
+            <if test="distributeUnfreezeMoney != null">
+                DISTRIBUTE_UNFREEZE_MONEY = #{distributeUnfreezeMoney},
+            </if>
+            <if test="distributeUnfreezingMoney != null">
+                DISTRIBUTE_UNFREEZING_MONEY = #{distributeUnfreezingMoney},
+            </if>
+            <if test="distributingMoney != null">
+                DISTRIBUTING_MONEY = #{distributingMoney},
+            </if>
+            <if test="freezeMoney != null">
+                FREEZE_MONEY = #{freezeMoney},
+            </if>
+            <if test="freezingMoney != null">
+                FREEZING_MONEY = #{freezingMoney},
+            </if>
+            <if test="fromctrlid != null">
+                FROMCTRLID = #{fromctrlid},
+            </if>
+            <if test="increaseMoney != null">
+                INCREASE_MONEY = #{increaseMoney},
+            </if>
+            <if test="increasingMoney != null">
+                INCREASING_MONEY = #{increasingMoney},
+            </if>
+            <if test="minusEndMoney != null">
+                MINUS_END_MONEY = #{minusEndMoney},
+            </if>
+            <if test="minusMoney != null">
+                MINUS_MONEY = #{minusMoney},
+            </if>
+            <if test="minusingMoney != null">
+                MINUSING_MONEY = #{minusingMoney},
+            </if>
+            <if test="month != null">
+                MONTH = #{month},
+            </if>
+            <if test="recoverMoney != null">
+                RECOVER_MONEY = #{recoverMoney},
+            </if>
+            <if test="recoveringMoney != null">
+                RECOVERING_MONEY = #{recoveringMoney},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark},
+            </if>
+            <if test="secondFromctrlid != null">
+                SECOND_FROMCTRLID = #{secondFromctrlid},
+            </if>
+            <if test="sumId != null">
+                SUM_ID = #{sumId},
+            </if>
+            <if test="unfreezeMoney != null">
+                UNFREEZE_MONEY = #{unfreezeMoney},
+            </if>
+            <if test="unfreezingMoney != null">
+                UNFREEZING_MONEY = #{unfreezingMoney},
+            </if>
+            <if test="useEndMoney != null">
+                USE_END_MONEY = #{useEndMoney},
+            </if>
+            <if test="useMoney != null">
+                USE_MONEY = #{useMoney},
+            </if>
+            <if test="usingMoney != null">
+                USING_MONEY = #{usingMoney},
+            </if>
+            <if test="verificationMoney != null">
+                VERIFICATION_MONEY = #{verificationMoney},
+            </if>
+            <if test="verificationingMoney != null">
+                VERIFICATIONING_MONEY = #{verificationingMoney},
+            </if>
+            <if test="year != null">
+                YEAR = #{year},
+            </if>
+        </set>
+        where ID = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from DFDEVDF0114.FGL_BALANCE where ID = #{id}
+    </delete>
+
+</mapper>

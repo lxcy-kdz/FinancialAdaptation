@@ -1,0 +1,51 @@
+server:
+  port: 9898
+spring:
+  application:
+    name: springboot-mybatis-elasticsearch
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: 192.168.50.103:9300
+      repositories:
+        enabled: true
+  elasticsearch:
+    rest:
+      uris: ["http://192.168.50.103:9200"]
+  datasource:
+    username: dfdevdf0114 #root
+    password: crux #root
+    driver-class-name: oracle.jdbc.driver.OracleDriver   #com.mysql.jdbc.Driver
+    url: jdbc:oracle:thin:@10.10.66.71:1521:orcl #jdbc:mysql://localhost:3306/Sunflower_new?useUnicode=true&useSSL=false&amp;characterEncoding=utf-8"
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-on-return: true
+      test-while-idle: false
+      test-on-borrow: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+    tomcat:
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.yonyougov.mapper
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helper-dialect: oracle
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+logging:
+  level:
+    com:
+      yonyougov:
+        mapper: debug
+
