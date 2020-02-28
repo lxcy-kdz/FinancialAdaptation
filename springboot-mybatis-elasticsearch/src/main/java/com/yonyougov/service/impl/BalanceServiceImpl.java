@@ -1,5 +1,6 @@
 package com.yonyougov.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yonyougov.common.domain.BalanceQueryDTO;
@@ -10,6 +11,7 @@ import com.yonyougov.service.BalanceService;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.search.aggregations.Aggregation;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
@@ -73,10 +75,12 @@ public class BalanceServiceImpl implements BalanceService {
         //拼接查询条件
         BoolQueryBuilder queryBuilder = getBoolQueryBuilder(balanceQueryDTO);
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder()
-                .withQuery(queryBuilder)
-                .withPageable(PageRequest.of(balanceQueryDTO.getPageNum(), balanceQueryDTO.getPageSize()));
+                .withQuery(queryBuilder);
+        if (balanceQueryDTO.getPageNum() != null && balanceQueryDTO.getPageSize() != null) {
+            nativeSearchQueryBuilder.withPageable(PageRequest.of(balanceQueryDTO.getPageNum(), balanceQueryDTO.getPageSize()));
+        }
         //添加排序
-        HashMap<String, SortOrder> sortCondition = balanceQueryDTO.getSortCondition();
+        Map<String, SortOrder> sortCondition = balanceQueryDTO.getSortCondition();
         if (sortCondition != null && sortCondition.size() > 0) {
             sortCondition.forEach((key, value) -> {
                 SortBuilder sortBuilder = SortBuilders.fieldSort(key).order(value);
@@ -159,7 +163,7 @@ public class BalanceServiceImpl implements BalanceService {
 
     private BoolQueryBuilder getBoolQueryBuilder(BalanceQueryDTO balanceQueryDTO) {
         String[] fetchFields = balanceQueryDTO.getFetchField();
-        HashMap<String, String> andConditionMap = balanceQueryDTO.getAndConditionMap();
+        Map<String, String> andConditionMap = balanceQueryDTO.getAndConditionMap();
         BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery();
         //定义存放and与条件QueryBuilder
         BoolQueryBuilder andQueryBuilder = QueryBuilders.boolQuery();
@@ -171,7 +175,7 @@ public class BalanceServiceImpl implements BalanceService {
             });
         }
         //模拟权限查询
-        HashMap<String, String[]> permissionCondition = balanceQueryDTO.getPermissionCondition();
+        Map<String, String[]> permissionCondition = balanceQueryDTO.getPermissionCondition();
         if (permissionCondition != null && permissionCondition.size() > 0) {
             permissionCondition.forEach((key, value) -> {
                 QueryBuilder termQueryBuilder = QueryBuilders.termsQuery(key, value);
@@ -180,9 +184,19 @@ public class BalanceServiceImpl implements BalanceService {
         }
         //指定字段进行单字符串模糊查询
         BoolQueryBuilder likeQueryBuilder = QueryBuilders.boolQuery();
-        for (String fetchField : fetchFields) {
-            QueryBuilder wildcardQueryBuilder = QueryBuilders.wildcardQuery(fetchField, "*" + balanceQueryDTO.getConditionWord() + "*");
-            likeQueryBuilder.should(wildcardQueryBuilder);
+        if (fetchFields != null && fetchFields.length > 0) {
+            for (String fetchField : fetchFields) {
+                QueryBuilder wildcardQueryBuilder = QueryBuilders.wildcardQuery(fetchField, "*" + balanceQueryDTO.getConditionWord() + "*");
+                likeQueryBuilder.should(wildcardQueryBuilder);
+            }
+        }
+        //对指定金额字段进行范围查询
+        Map<String, String[]> moneyRange = balanceQueryDTO.getMoneyRange();
+        if (moneyRange != null) {
+            moneyRange.forEach((key, value) -> {
+                RangeQueryBuilder lte = QueryBuilders.rangeQuery(key).gte(value[0]).lte(value[1]);
+                queryBuilder.must(lte);
+            });
         }
         queryBuilder.must(andQueryBuilder).must(likeQueryBuilder);
         return queryBuilder;
@@ -199,7 +213,6 @@ public class BalanceServiceImpl implements BalanceService {
         }
         return "";
     }
-
 
     /**
      * 判断一个字符串是否是数字类型
