@@ -309,7 +309,6 @@ public class MappingBuilder {
             }else{
                 builder.field(FIELD_TYPE, type.name().toLowerCase());
             }
-
             if (type == FieldType.Date && dateFormat != DateFormat.none) {
                 builder.field(FIELD_FORMAT, dateFormat == DateFormat.custom ? datePattern : dateFormat.toString());
             }

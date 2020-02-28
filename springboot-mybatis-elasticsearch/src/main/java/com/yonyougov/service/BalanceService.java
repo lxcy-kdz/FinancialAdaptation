@@ -5,7 +5,9 @@ import com.yonyougov.common.domain.BalanceQueryDTO;
 import com.yonyougov.entity.Balance;
 import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 额度逻辑处理层接口类
@@ -52,4 +54,20 @@ public interface BalanceService {
      * @return 查询结果
      */
     AggregatedPage<Balance> querySpecifiedFieldByConditionWord(BalanceQueryDTO balanceQueryDTO);
+
+    /**
+     * 对条件查询结果对指定金额字段进行统计求和(支持对多字段求和)
+     *
+     * @param balanceQueryDTO 条件封装实体
+     * @return 查询结果
+     */
+    Map statisticalSummationByCondition(BalanceQueryDTO balanceQueryDTO);
+
+    /**
+     * 对条件查询结果和分组进行指定金额字段进行统计求和(支持对多字段求和)
+     *
+     * @param balanceQueryDTO 条件DTO
+     * @return 查询结果
+     */
+    Map statisticalSummationByConditionGroup(BalanceQueryDTO balanceQueryDTO);
 }

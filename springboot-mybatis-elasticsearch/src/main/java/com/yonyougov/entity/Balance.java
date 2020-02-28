@@ -21,15 +21,19 @@ public class Balance {
     @Id
     private Long id;
 
+    @Field(type = FieldType.Keyword)
     private Long sumId;
 
+    @Field(type = FieldType.Keyword)
     private Long fromctrlid;
 
+    @Field(type = FieldType.Keyword)
     private Long secondFromctrlid;
 
-    @Field(type = FieldType.Long)
+    @Field(type = FieldType.Keyword)
     private Long accountId;
 
+    @Field(type = FieldType.Keyword)
     private Integer month;
 
     @Field(type = FieldType.Double)
@@ -47,6 +51,7 @@ public class Balance {
     @Field(type = FieldType.Keyword)
     private String remark;
 
+    @Field(type = FieldType.Keyword)
     private Long ccid;
 
     @Field(type = FieldType.Integer)
@@ -55,6 +60,7 @@ public class Balance {
     @Field(type = FieldType.Keyword)
     private String admDivCode;
 
+    @Field(type = FieldType.Keyword)
     private Long balanceId;
 
     @Field(type = FieldType.Double)
@@ -140,10 +146,12 @@ public class Balance {
 
     private Long createBy;
 
+    @Field(type = FieldType.Date)
     private Date createDate;
 
     private Long lastModifiedBy;
 
+    @Field(type = FieldType.Date)
     private Date lastModifiedDate;
 
     private Integer lastModifiedVersion;

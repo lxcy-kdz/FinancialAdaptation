@@ -9,6 +9,7 @@ import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author kongdezhi
@@ -95,9 +96,29 @@ public class BalanceController {
      * @param balanceQueryDTO 额度查询条件封装类
      * @return 查询结果
      */
-    @PostMapping
+    @PostMapping("/querySpecifiedFieldByConditionWord")
     public AggregatedPage<Balance> querySpecifiedFieldByConditionWord(@RequestBody BalanceQueryDTO balanceQueryDTO) {
         return balanceService.querySpecifiedFieldByConditionWord(balanceQueryDTO);
+    }
+
+    /**
+     * 对条件查询结果对指定金额字段进行统计求和(支持对多字段求和)
+     *
+     * @param balanceQueryDTO 条件封装实体
+     */
+    @PostMapping("/statisticalSummationByCondition")
+    public Map statisticalSummationByCondition(@RequestBody BalanceQueryDTO balanceQueryDTO) {
+        return balanceService.statisticalSummationByCondition(balanceQueryDTO);
+    }
+
+    /**
+     * 对条件查询结果和分组进行指定金额字段进行统计求和(支持对多字段求和)
+     *
+     * @param balanceQueryDTO 条件封装实体
+     */
+    @PostMapping("/statisticalSummationByConditionGroup")
+    public Map statisticalSummationByConditionGroup(@RequestBody BalanceQueryDTO balanceQueryDTO) {
+        return balanceService.statisticalSummationByConditionGroup(balanceQueryDTO);
     }
 
 }
